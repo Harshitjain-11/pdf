@@ -266,5 +266,134 @@
     "average_package": "₹5.5 LPA",
     "top_recruiters": ["TCS", "Infosys", "Wipro", "HCL", "Accenture", "Cognizant", "Tech Mahindra", "IBM", "Capgemini", "HDFC Bank"],
     "placement_cell_email": "placement@itmgwalior.ac.in"
+  },
+  "placements": {
+    "overall_percentage": "85%",
+    "average_package_lpa": 4.2,
+    "highest_package_lpa": 18.5,
+    "year": "2023-24",
+    "top_recruiters": [
+      {"name": "TCS", "roles": ["Systems Engineer", "Developer"], "package_lpa": 3.6},
+      {"name": "Infosys", "roles": ["Associate"], "package_lpa": 3.8},
+      {"name": "Wipro", "roles": ["Project Engineer"], "package_lpa": 3.5},
+      {"name": "HCL Technologies", "roles": ["Technical Support"], "package_lpa": 3.4},
+      {"name": "Capgemini", "roles": ["Analyst"], "package_lpa": 4.0},
+      {"name": "Tech Mahindra", "roles": ["Software Engineer"], "package_lpa": 3.7},
+      {"name": "Cognizant", "roles": ["Programmer Analyst"], "package_lpa": 4.0},
+      {"name": "Accenture", "roles": ["Associate SE"], "package_lpa": 4.5},
+      {"name": "IBM", "roles": ["Associate Developer"], "package_lpa": 5.2},
+      {"name": "Deloitte", "roles": ["Business Analyst"], "package_lpa": 6.0}
+    ],
+    "branch_wise": {
+      "B.Tech CS": "92% placed",
+      "B.Tech EC": "78% placed",
+      "B.Tech ME": "72% placed",
+      "B.Tech CE": "68% placed",
+      "MCA": "88% placed",
+      "MBA": "80% placed"
+    }
+  },
+  "documents_detailed": {
+    "mandatory": [
+      "10th marksheet (original + 2 photocopies)",
+      "12th marksheet (original + 2 photocopies)",
+      "School Leaving / Transfer Certificate",
+      "Aadhar Card (original + 2 photocopies)",
+      "4 passport-size photographs (recent, white background)",
+      "Migration Certificate (if from other board)",
+      "Character Certificate from last institution"
+    ],
+    "conditional": [
+      "Caste Certificate (SC/ST/OBC ke liye)",
+      "Income Certificate (EWS/scholarship ke liye)",
+      "Sports Certificate (sports quota ke liye)",
+      "GATE scorecard (M.Tech ke liye)",
+      "CAT/MAT scorecard (MBA ke liye)",
+      "Disability Certificate (if applicable)"
+    ],
+    "notes": "All documents self-attested honaye chahiye. Original documents verification ke baad wapas kar diye jayenge."
+  },
+  "important_dates_2025_26": {
+    "form_start": "March 1, 2025",
+    "form_last_date": "May 31, 2025",
+    "application_fee": "₹500 (non-refundable)",
+    "admit_card": "June 8, 2025",
+    "entrance_exam": "June 15, 2025",
+    "result_date": "June 25, 2025",
+    "first_merit_list": "July 1, 2025",
+    "counselling_start": "July 1, 2025",
+    "counselling_end": "July 10, 2025",
+    "fee_payment_deadline": "July 15, 2025",
+    "classes_begin": "August 1, 2025",
+    "lateral_entry_last_date": "June 15, 2025"
+  },
+  "hostel_detailed": {
+    "boys": {
+      "capacity": 400,
+      "fee_per_year": 55000,
+      "facilities": ["AC rooms available", "WiFi", "24x7 security", "Mess", "RO water", "Laundry", "Study room"]
+    },
+    "girls": {
+      "capacity": 200,
+      "fee_per_year": 58000,
+      "facilities": ["AC rooms", "WiFi", "24x7 CCTV", "Warden", "Mess", "RO water", "Common room"]
+    },
+    "mess_fee_per_month": 3500,
+    "availability": "First come first served basis"
+  },
+  "scholarships_detailed": {
+    "merit_based": {
+      "criteria": "12th mein 90% ya usse zyada",
+      "benefit": "25% fee waiver"
+    },
+    "ews": {
+      "criteria": "Family income < ₹8 lakh/year",
+      "benefit": "20% fee waiver + govt scheme applicable"
+    },
+    "sc_st": {
+      "criteria": "Valid caste certificate required",
+      "benefit": "MP Govt scholarship — full tuition in many cases"
+    },
+    "sports_quota": {
+      "criteria": "State/National level participation",
+      "benefit": "15% fee waiver"
+    },
+    "minority": {
+      "criteria": "Minority community + income proof",
+      "benefit": "Pre-matric/post-matric govt scholarship"
+    }
+  },
+  "campus": {
+    "area_acres": 25,
+    "naac_grade": "B+",
+    "affiliated_to": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), Bhopal",
+    "ugc_approved": true,
+    "established": 1999,
+    "labs": ["Computer lab x6", "Electronics lab", "Mechanical workshop", "Civil survey lab", "Chemistry lab", "Physics lab", "IoT lab", "AI/ML lab"],
+    "library_books": 25000,
+    "wifi": "Campus-wide Wi-Fi",
+    "sports": ["Cricket ground", "Basketball court", "Volleyball", "Badminton", "Table tennis", "Football ground", "Gym"],
+    "transport": {
+      "routes": ["Gwalior city bus", "Morena route", "Bhind route"],
+      "fee_per_year": 12000
+    }
+  },
+  "anti_ragging": {
+    "helpline": "1800-180-5522 (toll free)",
+    "college_committee": "+91-751-2970300 ext 210",
+    "email": "antiragging@itmgwalior.ac.in",
+    "policy": "Zero tolerance. FIR + rustication for violators."
+  },
+  "refund_policy": {
+    "before_july_15": "Full fee refund minus ₹1000 processing",
+    "july_15_to_aug_1": "75% refund",
+    "after_aug_1": "No refund. TC within 30 days."
+  },
+  "lateral_entry": {
+    "eligibility": "Diploma in relevant branch with 60%",
+    "direct_admission_to": "2nd year B.Tech",
+    "seats": "10% supernumerary seats",
+    "process": "DTE MP counselling ya direct application",
+    "last_date": "June 15, 2025"
   }
 }
