@@ -48,19 +48,40 @@ college_chatbot/
 cd college_chatbot
 ```
 
-### 2. Run setup (installs deps, downloads NLTK data, inits DB, trains model)
+### 2. Install dependencies (VS Code terminal)
+
+Run this command in the VS Code terminal (or any terminal) from inside the
+`college_chatbot/` folder to install all required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+> **Tip:** If you have multiple Python versions installed, use `pip3` instead:
+> ```bash
+> pip3 install -r requirements.txt
+> ```
+> Or target a specific Python interpreter:
+> ```bash
+> python -m pip install -r requirements.txt
+> ```
+
+### 3. Run full setup (downloads NLTK data, inits DB, trains model)
 
 ```bash
 python setup.py
 ```
 
-### 3. Start the server
+> `setup.py` already runs `pip install -r requirements.txt` internally, so
+> you can skip Step 2 and jump straight here if you prefer a single command.
+
+### 4. Start the server
 
 ```bash
 python app.py
 ```
 
-### 4. Open your browser
+### 5. Open your browser
 
 ```
 http://localhost:5000
@@ -149,7 +170,7 @@ export ADMIN_PASSWORD=mysecretpassword
 ```
 flask==3.0.0
 flask-cors==4.0.0
-nltk==3.8.1
+nltk==3.9.3
 scikit-learn==1.4.0
 numpy==1.26.0
 joblib==1.3.2
