@@ -128,22 +128,20 @@ def _initialize_components() -> None:
 
 # ── Message preprocessing (PART H edge cases) ───────────────────────────────
 
-# Emoji pattern for stripping
-_EMOJI_RE = re.compile(
-    "["
-    "\U0001F600-\U0001F64F"
-    "\U0001F300-\U0001F5FF"
-    "\U0001F680-\U0001F6FF"
-    "\U0001F1E0-\U0001F1FF"
-    "\U00002702-\U000027B0"
-    "\U000024C2-\U0001F251"
-    "\U0001F900-\U0001F9FF"
-    "\U0001FA00-\U0001FA6F"
-    "\U0001FA70-\U0001FAFF"
-    "\U00002600-\U000026FF"
-    "]+",
-    flags=re.UNICODE,
-)
+# Emoji pattern for stripping — uses Unicode category matching
+def _strip_emoji(text: str) -> str:
+    """Remove emoji characters from text."""
+    return re.sub(
+        r'[\U0001F600-\U0001F64F]|'   # Emoticons
+        r'[\U0001F300-\U0001F5FF]|'   # Misc Symbols and Pictographs
+        r'[\U0001F680-\U0001F6FF]|'   # Transport and Map
+        r'[\U0001F1E0-\U0001F1FF]|'   # Flags
+        r'[\U0001F900-\U0001F9FF]|'   # Supplemental Symbols
+        r'[\U0001FA00-\U0001FAFF]|'   # Extended-A/B
+        r'[\U00002702-\U000027B0]',    # Dingbats
+        '',
+        text,
+    )
 
 
 def _preprocess_message(text: str) -> str:
@@ -151,7 +149,7 @@ def _preprocess_message(text: str) -> str:
     Clean user input: lowercase, strip emoji, collapse whitespace,
     remove excess dots/special chars.
     """
-    text = _EMOJI_RE.sub("", text)
+    text = _strip_emoji(text)
     text = re.sub(r"\.{2,}", " ", text)
     text = re.sub(r"\?{2,}", "?", text)
     text = re.sub(r"\s+", " ", text).strip()

@@ -77,6 +77,16 @@ INVALID_NAMES = {
     "yes", "no", "haan", "nahi", "ok", "okay"
 }
 
+# Multi-word button labels that should be rejected as names
+BUTTON_LABELS = {
+    "book appointment", "apply now", "book campus visit",
+    "cancel booking", "courses offered", "fee structure",
+    "admission process", "contact us", "scholarship info",
+    "eligibility criteria", "documents needed", "last date to apply",
+    "b.tech details", "placement info", "hostel info",
+    "faculty info", "campus life"
+}
+
 VALID_HOURS = range(9, 17)  # 9 AM – 4 PM (last slot at 4 PM)
 
 
@@ -458,14 +468,6 @@ class SlotManager:
         if any(w in INVALID_NAMES for w in words):
             return False
         # Also check multi-word button labels
-        BUTTON_LABELS = {
-            "book appointment", "apply now", "book campus visit",
-            "cancel booking", "courses offered", "fee structure",
-            "admission process", "contact us", "scholarship info",
-            "eligibility criteria", "documents needed", "last date to apply",
-            "b.tech details", "placement info", "hostel info",
-            "faculty info", "campus life"
-        }
         if stripped.lower() in BUTTON_LABELS:
             return False
         return True
