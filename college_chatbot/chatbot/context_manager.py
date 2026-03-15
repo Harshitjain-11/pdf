@@ -8,6 +8,7 @@ Handles per-session multi-turn conversation state including:
 - Pronoun / anaphora resolution
 """
 
+import re
 import logging
 from collections import deque
 from datetime import datetime
@@ -170,7 +171,3 @@ class ContextManager:
             "turn_count": 0,
             "created_at": datetime.utcnow().isoformat(),
         }
-
-
-# Make re available in this module (used in resolve_text)
-import re  # noqa: E402 (placed after class to keep code readable)
