@@ -1,0 +1,49 @@
+{
+  "faqs": [
+    {
+      "question": "Is the college AICTE approved?",
+      "answer": "Yes, Institute of Technology & Management (ITM), Gwalior is approved by AICTE (All India Council for Technical Education). B.Tech courses are affiliated to RGPV (Rajiv Gandhi Proudyogiki Vishwavidyalaya), Bhopal.",
+      "category": "general"
+    },
+    {
+      "question": "What is the placement record?",
+      "answer": "Our placement rate is 90% with an average package of ₹5.5 LPA and highest package of ₹18 LPA. Top recruiters include TCS, Infosys, Wipro, HCL, Accenture, Tech Mahindra, Cognizant and more.",
+      "category": "placement"
+    },
+    {
+      "question": "Is there a transport facility?",
+      "answer": "Yes, the college provides bus service covering major areas of Gwalior city and nearby regions. Monthly bus pass is available at ₹1,200/month.",
+      "category": "facilities"
+    },
+    {
+      "question": "Can I change my course after admission?",
+      "answer": "Course change requests are entertained within the first 30 days of admission, subject to seat availability and eligibility criteria.",
+      "category": "admissions"
+    },
+    {
+      "question": "What is the medium of instruction?",
+      "answer": "The medium of instruction is English for all technical programs (B.Tech, M.Tech). Hindi is used as a supplementary language for better understanding.",
+      "category": "academics"
+    },
+    {
+      "question": "Are there any lateral entry admissions?",
+      "answer": "Yes, lateral entry is available for B.Tech (2nd year) for diploma holders with 60% marks through RGPV lateral entry counselling. Direct 2nd year admission based on merit.",
+      "category": "admissions"
+    },
+    {
+      "question": "What is the library timing?",
+      "answer": "The central library is open Monday to Saturday from 8 AM to 8 PM. Digital library resources are available 24/7 online.",
+      "category": "facilities"
+    },
+    {
+      "question": "Is there any entrance exam for BBA and BCA?",
+      "answer": "BBA and BCA admissions at ITM Gwalior are direct (merit-based on 12th marks). No separate entrance exam is required.",
+      "category": "admissions"
+    },
+    {
+      "question": "Which university is B.Tech affiliated to?",
+      "answer": "B.Tech courses at ITM Gwalior are affiliated to Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), Bhopal. Degree is awarded by RGPV.",
+      "category": "academics"
+    }
+  ]
+}
