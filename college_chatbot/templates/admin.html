@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel – Sunrise Institute Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #f0f2f5; color: #333; }
+    .topbar {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      color: #fff; padding: 1rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .topbar h1 { font-size: 1.3rem; font-weight: 600; }
+    .topbar a { color: #fff; text-decoration: none; font-size: 0.9rem; opacity: 0.85; }
+    .container { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: #fff; border-radius: 12px; padding: 1.2rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      text-align: center;
+    }
+    .stat-card .value { font-size: 2rem; font-weight: 700; color: #1a2a6c; }
+    .stat-card .label { font-size: 0.8rem; color: #888; margin-top: 0.2rem; }
+    .card {
+      background: #fff; border-radius: 12px; padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 2rem;
+    }
+    .card h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: #1a2a6c; }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+    .btn {
+      padding: 0.5rem 1rem; border: none; border-radius: 8px;
+      cursor: pointer; font-family: inherit; font-size: 0.85rem; font-weight: 500;
+    }
+    .btn-primary { background: #1a2a6c; color: #fff; }
+    .btn-success { background: #28a745; color: #fff; }
+    .btn-danger  { background: #dc3545; color: #fff; }
+    .btn-sm { padding: 0.3rem 0.7rem; font-size: 0.78rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th { background: #f5f7ff; text-align: left; padding: 0.7rem 0.8rem; color: #1a2a6c; font-weight: 600; }
+    td { padding: 0.6rem 0.8rem; border-bottom: 1px solid #eee; vertical-align: middle; }
+    tr:last-child td { border-bottom: none; }
+    .badge {
+      display: inline-block; padding: 0.25rem 0.65rem;
+      border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+    }
+    .badge-pending  { background: #fff3cd; color: #856404; }
+    .badge-confirmed { background: #d4edda; color: #155724; }
+    .badge-cancelled { background: #f8d7da; color: #721c24; }
+    .chart-wrap { position: relative; height: 220px; }
+    @media (max-width: 600px) {
+      table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+<body>
+<div class="topbar">
+  <h1>🌅 Sunrise Institute – Admin Panel</h1>
+  <a href="/">← Back to Chatbot</a>
+</div>
+
+<div class="container">
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="value">{{ stats.total_appointments }}</div>
+      <div class="label">Total Appointments</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">{{ stats.pending_count }}</div>
+      <div class="label">Pending</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">{{ stats.confirmed_count }}</div>
+      <div class="label">Confirmed</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">{{ stats.total_leads }}</div>
+      <div class="label">Total Leads</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">{{ stats.today_logs }}</div>
+      <div class="label">Chats Today</div>
+    </div>
+  </div>
+
+  <!-- Intent Distribution Chart -->
+  <div class="card">
+    <h2>📊 Intent Distribution</h2>
+    <div class="chart-wrap">
+      <canvas id="intentChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Appointments Table -->
+  <div class="card">
+    <div class="card-header">
+      <h2>📅 Appointments</h2>
+      <a href="/admin/export/appointments" class="btn btn-primary btn-sm">⬇ Export CSV</a>
+    </div>
+    {% if appointments %}
+    <table>
+      <thead>
+        <tr>
+          <th>Booking ID</th><th>Name</th><th>Phone</th><th>Course</th>
+          <th>Date</th><th>Time</th><th>Status</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for a in appointments %}
+        <tr id="row-{{ a.booking_id }}">
+          <td><code>{{ a.booking_id }}</code></td>
+          <td>{{ a.name }}</td>
+          <td>{{ a.phone }}</td>
+          <td>{{ a.course_interest or '—' }}</td>
+          <td>{{ a.preferred_date or '—' }}</td>
+          <td>{{ a.preferred_time or '—' }}</td>
+          <td>
+            <span class="badge badge-{{ a.status }}">{{ a.status }}</span>
+          </td>
+          <td>
+            {% if a.status == 'pending' %}
+            <button class="btn btn-success btn-sm"
+              onclick="updateStatus('{{ a.booking_id }}', 'confirm')">✓ Confirm</button>
+            <button class="btn btn-danger btn-sm"
+              onclick="updateStatus('{{ a.booking_id }}', 'cancel')">✗ Cancel</button>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p style="color:#888; text-align:center; padding:2rem">No appointments yet.</p>
+    {% endif %}
+  </div>
+
+  <!-- Leads Table -->
+  <div class="card">
+    <h2>👥 Leads</h2>
+    {% if leads %}
+    <table>
+      <thead>
+        <tr><th>Session</th><th>Name</th><th>Phone</th><th>Email</th><th>Course</th><th>Created</th></tr>
+      </thead>
+      <tbody>
+        {% for l in leads %}
+        <tr>
+          <td><code>{{ l.session_id[:8] }}…</code></td>
+          <td>{{ l.name or '—' }}</td>
+          <td>{{ l.phone or '—' }}</td>
+          <td>{{ l.email or '—' }}</td>
+          <td>{{ l.course_interest or '—' }}</td>
+          <td>{{ l.created_at[:10] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <p style="color:#888; text-align:center; padding:2rem">No leads yet.</p>
+    {% endif %}
+  </div>
+
+</div><!-- /.container -->
+
+<script>
+// Intent distribution chart
+const intentData = {{ stats.intent_distribution | tojson }};
+const labels = intentData.map(d => d.intent);
+const counts = intentData.map(d => d.cnt);
+
+new Chart(document.getElementById('intentChart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [{
+      label: 'Message Count',
+      data: counts,
+      backgroundColor: 'rgba(26,42,108,0.7)',
+      borderColor: '#1a2a6c',
+      borderWidth: 1,
+      borderRadius: 6,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+  }
+});
+
+async function updateStatus(bookingId, action) {
+  const url = `/admin/appointment/${bookingId}/${action}`;
+  const res = await fetch(url, { method: 'POST' });
+  const data = await res.json();
+  if (data.success) {
+    location.reload();
+  } else {
+    alert('Update failed. Please try again.');
+  }
+}
+</script>
+</body>
+</html>

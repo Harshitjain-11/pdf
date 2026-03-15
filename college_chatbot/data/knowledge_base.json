@@ -1,0 +1,270 @@
+{
+  "college": {
+    "name": "Sunrise Institute of Technology",
+    "short_name": "SIT",
+    "established": 2005,
+    "naac_grade": "A+",
+    "affiliating_university": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), Bhopal",
+    "type": "Private (Aided)",
+    "location": "Bhopal, Madhya Pradesh",
+    "address": "Sunrise Campus, Raisen Road, Bhopal - 462038, Madhya Pradesh, India",
+    "phone": ["+91-755-2345678", "+91-9876543210"],
+    "email": "info@sunriseinstitute.ac.in",
+    "admissions_email": "admissions@sunriseinstitute.ac.in",
+    "website": "www.sunriseinstitute.ac.in",
+    "google_maps": "https://bit.ly/sunrise-bhopal",
+    "office_hours": "Monday to Saturday, 9:00 AM – 5:00 PM",
+    "accreditations": ["NAAC A+", "NBA Accredited", "AICTE Approved", "UGC Recognized"]
+  },
+  "courses": {
+    "ug": [
+      {
+        "name": "B.Tech Computer Science Engineering",
+        "short": "B.Tech CS",
+        "duration": "4 years",
+        "seats": 120,
+        "fees_per_year": 85000,
+        "eligibility": "60% in PCM (Physics, Chemistry, Maths) in 12th + JEE Mains score",
+        "min_percentage": 60,
+        "entrance_exam": "JEE Mains / SITEE (Sunrise Institute Technology Entrance Exam)",
+        "specializations": ["AI & ML", "Data Science", "Cybersecurity", "Cloud Computing"]
+      },
+      {
+        "name": "B.Tech Electronics & Communication Engineering",
+        "short": "B.Tech EC",
+        "duration": "4 years",
+        "seats": 90,
+        "fees_per_year": 82000,
+        "eligibility": "60% in PCM in 12th + JEE Mains score",
+        "min_percentage": 60,
+        "entrance_exam": "JEE Mains / SITEE",
+        "specializations": ["VLSI Design", "Embedded Systems", "Signal Processing"]
+      },
+      {
+        "name": "B.Tech Mechanical Engineering",
+        "short": "B.Tech ME",
+        "duration": "4 years",
+        "seats": 90,
+        "fees_per_year": 80000,
+        "eligibility": "60% in PCM in 12th + JEE Mains score",
+        "min_percentage": 60,
+        "entrance_exam": "JEE Mains / SITEE",
+        "specializations": ["Automobile Engineering", "Thermal Engineering", "Manufacturing"]
+      },
+      {
+        "name": "B.Tech Civil Engineering",
+        "short": "B.Tech CE",
+        "duration": "4 years",
+        "seats": 60,
+        "fees_per_year": 78000,
+        "eligibility": "60% in PCM in 12th + JEE Mains score",
+        "min_percentage": 60,
+        "entrance_exam": "JEE Mains / SITEE",
+        "specializations": ["Structural Engineering", "Environmental Engineering"]
+      },
+      {
+        "name": "Bachelor of Computer Applications",
+        "short": "BCA",
+        "duration": "3 years",
+        "seats": 60,
+        "fees_per_year": 45000,
+        "eligibility": "55% in 12th with Mathematics as a subject",
+        "min_percentage": 55,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Web Development", "Mobile App Development", "Database Management"]
+      },
+      {
+        "name": "Bachelor of Business Administration",
+        "short": "BBA",
+        "duration": "3 years",
+        "seats": 60,
+        "fees_per_year": 40000,
+        "eligibility": "50% in 12th (any stream)",
+        "min_percentage": 50,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Marketing", "Finance", "Human Resources", "Entrepreneurship"]
+      },
+      {
+        "name": "Bachelor of Science",
+        "short": "B.Sc",
+        "duration": "3 years",
+        "seats": 60,
+        "fees_per_year": 35000,
+        "eligibility": "55% in 12th (Science stream)",
+        "min_percentage": 55,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Physics", "Chemistry", "Mathematics", "Biotechnology"]
+      },
+      {
+        "name": "Bachelor of Commerce",
+        "short": "B.Com",
+        "duration": "3 years",
+        "seats": 60,
+        "fees_per_year": 30000,
+        "eligibility": "50% in 12th (any stream)",
+        "min_percentage": 50,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Accounting", "Taxation", "Business Law"]
+      }
+    ],
+    "pg": [
+      {
+        "name": "Master of Technology",
+        "short": "M.Tech",
+        "duration": "2 years",
+        "seats": 30,
+        "fees_per_year": 95000,
+        "eligibility": "Relevant B.Tech/B.E. with 60% marks + GATE score (preferred)",
+        "min_percentage": 60,
+        "entrance_exam": "GATE / SITMEE (Sunrise Institute M.Tech Entrance Exam)",
+        "specializations": ["Computer Science", "Electronics", "Mechanical", "Civil"]
+      },
+      {
+        "name": "Master of Computer Applications",
+        "short": "MCA",
+        "duration": "2 years",
+        "seats": 60,
+        "fees_per_year": 55000,
+        "eligibility": "BCA/B.Sc (CS/IT)/B.Tech with 55% marks + Mathematics in qualifying exam",
+        "min_percentage": 55,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Software Engineering", "Cloud Computing", "Data Analytics"]
+      },
+      {
+        "name": "Master of Business Administration",
+        "short": "MBA",
+        "duration": "2 years",
+        "seats": 60,
+        "fees_per_year": 90000,
+        "eligibility": "Any graduation with 50% marks + CAT/MAT/XAT score",
+        "min_percentage": 50,
+        "entrance_exam": "CAT / MAT / XAT / SITMAT",
+        "specializations": ["Marketing", "Finance", "HR", "Operations", "Business Analytics"]
+      },
+      {
+        "name": "Master of Science",
+        "short": "M.Sc",
+        "duration": "2 years",
+        "seats": 30,
+        "fees_per_year": 45000,
+        "eligibility": "Relevant B.Sc with 55% marks",
+        "min_percentage": 55,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Physics", "Chemistry", "Mathematics", "Biotechnology"]
+      }
+    ]
+  },
+  "important_dates": {
+    "academic_year": "2025-26",
+    "form_start_date": "March 1, 2025",
+    "form_last_date": "May 31, 2025",
+    "application_fee": 500,
+    "entrance_exam_date": "June 15, 2025",
+    "admit_card_release": "June 8, 2025",
+    "result_declaration": "June 25, 2025",
+    "first_merit_list": "July 1, 2025",
+    "second_merit_list": "July 8, 2025",
+    "counselling_start": "July 1, 2025",
+    "counselling_end": "July 10, 2025",
+    "classes_begin": "August 1, 2025",
+    "exam_centers": ["Bhopal", "Indore", "Jabalpur", "Gwalior", "Ujjain"]
+  },
+  "documents_required": [
+    "10th Marksheet & Certificate",
+    "12th/Graduation Marksheet & Certificate",
+    "Aadhar Card (both sides)",
+    "Passport size photographs (6 copies)",
+    "Caste/Category Certificate (if applicable)",
+    "Migration Certificate",
+    "Character Certificate from previous institution",
+    "Income Certificate (for scholarship application)",
+    "Transfer Certificate",
+    "Medical Fitness Certificate"
+  ],
+  "hostel": {
+    "boys_hostel": {
+      "name": "Sunrise Boys Hostel",
+      "capacity": 500,
+      "fees_per_year": 65000,
+      "includes": "Mess charges included",
+      "room_types": ["2-sharing", "3-sharing", "4-sharing"],
+      "facilities": ["24/7 Security", "WiFi (50 Mbps)", "Hot Water", "Indoor Sports", "Common Room", "Laundry", "Medical Room"]
+    },
+    "girls_hostel": {
+      "name": "Sunrise Girls Hostel",
+      "capacity": 300,
+      "fees_per_year": 70000,
+      "includes": "Mess charges included",
+      "room_types": ["2-sharing", "3-sharing"],
+      "facilities": ["24/7 Security + Female Wardens", "WiFi (50 Mbps)", "Hot Water", "Indoor Sports", "Common Room", "Laundry", "Medical Room", "Salon"]
+    },
+    "contact": "hostel@sunriseinstitute.ac.in",
+    "warden_phone": "+91-755-2345679"
+  },
+  "scholarships": [
+    {
+      "name": "Merit Scholarship",
+      "description": "For students with >90% marks in qualifying examination",
+      "benefit": "50% tuition fee waiver",
+      "eligibility": "More than 90% in 10+2 or qualifying exam",
+      "renewable": true,
+      "renewal_criteria": "Maintain 8.0 CGPA each semester"
+    },
+    {
+      "name": "EWS Scholarship",
+      "description": "For economically weaker section students",
+      "benefit": "30% tuition fee waiver",
+      "eligibility": "Annual family income less than ₹2.5 lakhs",
+      "renewable": true,
+      "renewal_criteria": "Maintain 6.0 CGPA each semester"
+    },
+    {
+      "name": "SC/ST Scholarship",
+      "description": "Government scholarship combined with institutional discount",
+      "benefit": "Government scholarship + 25% institutional fee discount",
+      "eligibility": "SC/ST category certificate required",
+      "renewable": true,
+      "renewal_criteria": "Regular attendance and passing all subjects"
+    },
+    {
+      "name": "Sports Quota Scholarship",
+      "description": "For state or national level athletes",
+      "benefit": "20% tuition fee waiver",
+      "eligibility": "State or national level participation certificate",
+      "renewable": true,
+      "renewal_criteria": "Continue sports participation and maintain 6.5 CGPA"
+    }
+  ],
+  "admission_process": [
+    "Visit www.sunriseinstitute.ac.in and click on 'Apply Now'",
+    "Fill the online application form with personal and academic details",
+    "Upload required documents (marksheets, Aadhar, photograph)",
+    "Pay application fee of ₹500 online",
+    "Download admit card for entrance exam (if applicable)",
+    "Appear for SITEE/SITMEE entrance examination",
+    "Check result and merit list on college website",
+    "Attend counselling session with original documents",
+    "Pay admission fee and confirm your seat",
+    "Collect admission letter and begin classes on August 1, 2025"
+  ],
+  "facilities": [
+    "Central Library with 50,000+ books and e-resources",
+    "Modern Computer Labs (500+ workstations)",
+    "Research & Innovation Center",
+    "Sports Complex (Cricket ground, Football field, Basketball court)",
+    "Cafeteria & Food Court",
+    "Medical Center",
+    "Auditorium (1000 seating capacity)",
+    "Smart Classrooms",
+    "WiFi Campus",
+    "Industry Partnership Cell",
+    "Placement Cell (500+ companies visiting annually)"
+  ],
+  "placement": {
+    "placement_rate": "94%",
+    "highest_package": "₹24 LPA",
+    "average_package": "₹6.8 LPA",
+    "top_recruiters": ["TCS", "Infosys", "Wipro", "HCL", "Accenture", "IBM", "Microsoft", "Amazon", "Deloitte", "HDFC Bank"],
+    "placement_cell_email": "placement@sunriseinstitute.ac.in"
+  }
+}
