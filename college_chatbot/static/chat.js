@@ -1,5 +1,5 @@
 /**
- * chat.js — Sunrise Institute College Enquiry Chatbot
+ * chat.js — ITM Gwalior College Enquiry Chatbot
  * Handles all client-side chat interaction with zero dependencies.
  */
 
@@ -13,7 +13,7 @@ function generateUUID() {
   });
 }
 
-const SESSION_KEY = 'sit_session_id';
+const SESSION_KEY = 'itm_session_id';
 let sessionId = localStorage.getItem(SESSION_KEY);
 if (!sessionId) {
   sessionId = generateUUID();
@@ -61,7 +61,7 @@ function appendMessage(text, role, quickReplies = []) {
   if (role === 'bot') {
     const avatar = document.createElement('div');
     avatar.className = 'avatar';
-    avatar.textContent = 'SI';
+    avatar.textContent = 'IT';
     row.appendChild(avatar);
   }
 
@@ -200,9 +200,9 @@ userInput.addEventListener('input', () => {
 
 (function showWelcome() {
   const welcomeText =
-    '👋 Welcome to **Sunrise Institute of Technology, Bhopal**!\n\n' +
+    '👋 Welcome to **Institute of Technology & Management, Gwalior**!\n\n' +
     'I\'m your virtual admission counsellor. I can help you with:\n' +
-    '📚 Courses & Eligibility\n' +
+    '📚 Courses & Eligibility (B.Tech affiliated to RGPV Bhopal)\n' +
     '💰 Fee Structure & Scholarships\n' +
     '📝 Admission Process & Dates\n' +
     '📅 Book a Campus Visit\n\n' +

@@ -22,9 +22,9 @@
         "yo"
       ],
       "responses": [
-        "Hello! Welcome to Sunrise Institute of Technology, Bhopal. How can I help you today?",
-        "Hi there! I'm the Sunrise Institute chatbot. Ask me anything about admissions, courses, fees, and more!",
-        "Namaste! Welcome to Sunrise Institute of Technology. I'm here to help you with your enquiries."
+        "Hello! Welcome to Institute of Technology & Management, Gwalior. How can I help you today?",
+        "Hi there! I'm the ITM Gwalior chatbot. Ask me anything about admissions, courses, fees, and more!",
+        "Namaste! Welcome to ITM Gwalior. I'm here to help you with your enquiries."
       ]
     },
     {
@@ -49,8 +49,8 @@
         "alvida"
       ],
       "responses": [
-        "Thank you for contacting Sunrise Institute of Technology! Feel free to reach out anytime. Good luck!",
-        "Goodbye! Best of luck with your admission. Visit us at Sunrise Institute of Technology, Bhopal!",
+        "Thank you for contacting Institute of Technology & Management, Gwalior! Feel free to reach out anytime. Good luck!",
+        "Goodbye! Best of luck with your admission. Visit us at ITM Gwalior!",
         "Thanks for chatting! If you have more questions, we're always here. Have a great day!"
       ]
     },
@@ -76,7 +76,7 @@
         "how to register"
       ],
       "responses": [
-        "The admission process at Sunrise Institute of Technology involves: 1) Fill online application form at our website, 2) Upload required documents, 3) Pay application fee of ₹500, 4) Appear for entrance exam (if applicable), 5) Attend counselling session, 6) Pay admission fee and confirm seat."
+        "The admission process at ITM Gwalior involves: 1) Fill online application form at www.itmgwalior.ac.in, 2) Upload required documents, 3) Pay application fee of ₹500, 4) Appear for JEE Mains / RGPV DTE MP counselling (for B.Tech), 5) Attend counselling session, 6) Pay admission fee and confirm seat."
       ]
     },
     {
@@ -101,7 +101,7 @@
         "departments"
       ],
       "responses": [
-        "Sunrise Institute of Technology offers UG and PG programs. UG: B.Tech (CS, EC, ME, CE), BCA, BBA, B.Sc, B.Com. PG: M.Tech, MCA, MBA, M.Sc. Would you like details about any specific course?"
+        "ITM Gwalior offers UG and PG programs. UG: B.Tech (CS, EC, ME, CE) affiliated to RGPV Bhopal, BCA, BBA, B.Sc, B.Com. PG: M.Tech, MCA, MBA, M.Sc. Would you like details about any specific course?"
       ]
     },
     {
@@ -126,7 +126,7 @@
         "minimum eligibility"
       ],
       "responses": [
-        "Eligibility varies by course. B.Tech requires 60% in PCM in 12th + JEE score. BCA requires 55% in 12th with Maths. BBA requires 50% in any stream in 12th. M.Tech requires relevant B.Tech with 60%. MBA requires graduation with 50% + MAT/CAT score. Which course eligibility would you like to know?"
+        "Eligibility varies by course. B.Tech (RGPV affiliated) requires 60% in PCM in 12th + JEE Mains score. BCA requires 55% in 12th with Maths. BBA requires 50% in any stream in 12th. M.Tech requires relevant B.Tech with 60%. MBA requires graduation with 50% + MAT/CAT score. Which course eligibility would you like to know?"
       ]
     },
     {
@@ -152,7 +152,7 @@
         "cost of course"
       ],
       "responses": [
-        "Fee structure at Sunrise Institute of Technology: B.Tech - ₹85,000/year, BCA - ₹45,000/year, BBA - ₹40,000/year, B.Sc - ₹35,000/year, B.Com - ₹30,000/year, M.Tech - ₹95,000/year, MCA - ₹55,000/year, MBA - ₹90,000/year, M.Sc - ₹45,000/year. Scholarships available for merit students!"
+        "Fee structure at ITM Gwalior: B.Tech CS - ₹87,000/year, B.Tech EC/ME/CE - ₹80,000-84,000/year, BCA - ₹48,000/year, BBA - ₹42,000/year, B.Sc - ₹36,000/year, B.Com - ₹32,000/year, M.Tech - ₹92,000/year, MCA - ₹58,000/year, MBA - ₹88,000/year. Scholarships available for merit students!"
       ]
     },
     {
@@ -227,7 +227,7 @@
         "hostel charges"
       ],
       "responses": [
-        "Sunrise Institute has excellent hostel facilities. Boys Hostel: Capacity 500 students, Fee ₹65,000/year (with mess). Girls Hostel: Capacity 300 students, Fee ₹70,000/year (with mess). Facilities include: 24/7 security, WiFi, hot water, furnished rooms (2-4 sharing), common room, indoor sports, medical room. Contact: hostel@sunriseinstitute.ac.in"
+        "ITM Gwalior has excellent hostel facilities. Boys Hostel: Capacity 500 students, Fee ₹68,000/year (with mess). Girls Hostel: Capacity 300 students, Fee ₹72,000/year (with mess). Facilities include: 24/7 security, WiFi, hot water, furnished rooms (2-4 sharing), common room, indoor sports, medical room. Contact: hostel@itmgwalior.ac.in"
       ]
     },
     {
@@ -252,7 +252,7 @@
         "contact karna hai"
       ],
       "responses": [
-        "Contact Sunrise Institute of Technology: 📞 Phone: +91-755-2345678, +91-9876543210. 📧 Email: info@sunriseinstitute.ac.in. 🌐 Website: www.sunriseinstitute.ac.in. 📍 Address: Sunrise Campus, Raisen Road, Bhopal - 462038, Madhya Pradesh. ⏰ Office Hours: Monday-Saturday, 9 AM – 5 PM. Google Maps: bit.ly/sunrise-bhopal"
+        "Contact ITM Gwalior: 📞 Phone: +91-751-2970300, +91-9039019301. 📧 Email: info@itmgwalior.ac.in. 🌐 Website: www.itmgwalior.ac.in. 📍 Address: ITM Campus, Turari, NH-75, Gwalior - 474001, Madhya Pradesh. ⏰ Office Hours: Monday-Saturday, 9 AM – 5 PM."
       ]
     },
     {
@@ -277,7 +277,7 @@
         "merit based scholarship"
       ],
       "responses": [
-        "Scholarship opportunities at Sunrise Institute: 1) Merit Scholarship: 50% fee waiver for students with >90% in qualifying exam. 2) EWS Scholarship: 30% fee waiver for economically weaker section (income <2.5L/year). 3) SC/ST Scholarship: Government scholarship + 25% institutional discount. 4) Sports Quota: 20% fee waiver for state/national level athletes. Apply within 30 days of admission."
+        "Scholarship opportunities at ITM Gwalior: 1) Merit Scholarship: 50% fee waiver for students with >90% in qualifying exam. 2) EWS Scholarship: 30% fee waiver for economically weaker section (income <2.5L/year). 3) SC/ST Scholarship: Government scholarship + 25% institutional discount. 4) Sports Quota: 20% fee waiver for state/national level athletes. Apply within 30 days of admission."
       ]
     },
     {
@@ -302,7 +302,7 @@
         "exam timetable"
       ],
       "responses": [
-        "Entrance Exam Details: Date: June 15, 2025. Duration: 3 hours. Pattern: MCQ (100 questions). Subjects: Physics, Chemistry, Maths/Biology (as applicable). Total Marks: 400. Admit Card release: June 8, 2025. Exam centers: Bhopal, Indore, Jabalpur, Gwalior. Syllabus follows NCERT 11th & 12th standard."
+        "For B.Tech admissions, ITM Gwalior follows RGPV / DTE MP counselling based on JEE Mains score. Exam Date: June 15, 2025. Duration: 3 hours. Pattern: MCQ (100 questions). Subjects: Physics, Chemistry, Maths. Total Marks: 400. Admit Card release: June 8, 2025. Exam centers: Gwalior, Bhopal, Indore, Jabalpur. Syllabus follows NCERT 11th & 12th standard."
       ]
     },
     {
@@ -327,7 +327,7 @@
         "cut off list"
       ],
       "responses": [
-        "Results & Merit List: Entrance exam result: June 25, 2025. Merit list will be published on www.sunriseinstitute.ac.in/results. You'll need your roll number and date of birth to check. First merit list: July 1, 2025. Second merit list (if required): July 8, 2025. SMS and email notification will be sent to registered candidates."
+        "Results & Merit List: Entrance exam result: June 25, 2025. Merit list will be published on www.itmgwalior.ac.in/results. You'll need your roll number and date of birth to check. First merit list: July 1, 2025. Second merit list (if required): July 8, 2025. SMS and email notification will be sent to registered candidates."
       ]
     },
     {
@@ -352,7 +352,7 @@
         "schedule appointment"
       ],
       "responses": [
-        "I'd be happy to help you book a counselling appointment! Let me collect your details."
+        "I'd be happy to help you book a counselling appointment at ITM Gwalior! Let me collect your details."
       ]
     },
     {
@@ -373,7 +373,7 @@
       ],
       "responses": [
         "I'm sorry, I didn't quite understand that. Could you please rephrase your question? I can help you with admissions, courses, fees, eligibility, scholarships, and more!",
-        "I didn't catch that. Could you ask again? I'm here to help with information about Sunrise Institute of Technology.",
+        "I didn't catch that. Could you ask again? I'm here to help with information about Institute of Technology & Management, Gwalior.",
         "Hmm, I'm not sure I understood. Try asking about: Courses, Fees, Admission Process, Eligibility, or Scholarships!"
       ]
     }

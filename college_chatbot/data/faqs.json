@@ -2,17 +2,17 @@
   "faqs": [
     {
       "question": "Is the college AICTE approved?",
-      "answer": "Yes, Sunrise Institute of Technology is approved by AICTE (All India Council for Technical Education) and has received NAAC A+ accreditation.",
+      "answer": "Yes, Institute of Technology & Management (ITM), Gwalior is approved by AICTE (All India Council for Technical Education). B.Tech courses are affiliated to RGPV (Rajiv Gandhi Proudyogiki Vishwavidyalaya), Bhopal.",
       "category": "general"
     },
     {
       "question": "What is the placement record?",
-      "answer": "Our placement rate is 94% with an average package of ₹6.8 LPA and highest package of ₹24 LPA. Top recruiters include TCS, Infosys, Wipro, Amazon, Microsoft and more.",
+      "answer": "Our placement rate is 90% with an average package of ₹5.5 LPA and highest package of ₹18 LPA. Top recruiters include TCS, Infosys, Wipro, HCL, Accenture, Tech Mahindra, Cognizant and more.",
       "category": "placement"
     },
     {
       "question": "Is there a transport facility?",
-      "answer": "Yes, the college provides bus service covering major areas of Bhopal. Monthly bus pass is available at ₹1,200/month.",
+      "answer": "Yes, the college provides bus service covering major areas of Gwalior city and nearby regions. Monthly bus pass is available at ₹1,200/month.",
       "category": "facilities"
     },
     {
@@ -22,12 +22,12 @@
     },
     {
       "question": "What is the medium of instruction?",
-      "answer": "The medium of instruction is English for all technical programs. Hindi is used as a supplementary language for better understanding.",
+      "answer": "The medium of instruction is English for all technical programs (B.Tech, M.Tech). Hindi is used as a supplementary language for better understanding.",
       "category": "academics"
     },
     {
       "question": "Are there any lateral entry admissions?",
-      "answer": "Yes, lateral entry is available for B.Tech (2nd year) for diploma holders with 60% marks. Direct 2nd year admission based on merit.",
+      "answer": "Yes, lateral entry is available for B.Tech (2nd year) for diploma holders with 60% marks through RGPV lateral entry counselling. Direct 2nd year admission based on merit.",
       "category": "admissions"
     },
     {
@@ -37,8 +37,13 @@
     },
     {
       "question": "Is there any entrance exam for BBA and BCA?",
-      "answer": "BBA and BCA admissions are direct (merit-based on 12th marks). No separate entrance exam is required.",
+      "answer": "BBA and BCA admissions at ITM Gwalior are direct (merit-based on 12th marks). No separate entrance exam is required.",
       "category": "admissions"
+    },
+    {
+      "question": "Which university is B.Tech affiliated to?",
+      "answer": "B.Tech courses at ITM Gwalior are affiliated to Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), Bhopal. Degree is awarded by RGPV.",
+      "category": "academics"
     }
   ]
 }

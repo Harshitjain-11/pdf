@@ -106,7 +106,7 @@ def save_appointment(slot_dict: dict) -> str:
     Returns:
         The booking_id string assigned to this appointment.
     """
-    booking_id = slot_dict.get("booking_id") or f"SIT{uuid.uuid4().hex[:8].upper()}"
+    booking_id = slot_dict.get("booking_id") or f"ITM{uuid.uuid4().hex[:8].upper()}"
 
     with _db() as conn:
         conn.execute(

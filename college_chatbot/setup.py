@@ -94,7 +94,7 @@ def train_model() -> None:
 
 
 def main() -> None:
-    print("\n🌅  Sunrise Institute of Technology — Chatbot Setup")
+    print("\n🎓  Institute of Technology & Management, Gwalior — Chatbot Setup")
     print("=" * 60)
 
     install_requirements()

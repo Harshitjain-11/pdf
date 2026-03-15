@@ -115,20 +115,20 @@ FALLBACK_RESPONSES = [
     ),
     (
         "I didn't catch that. Could you ask again? "
-        "I'm here to help with everything about Sunrise Institute of Technology! 🌅"
+        "I'm here to help with everything about Institute of Technology & Management, Gwalior! 🎓"
     ),
 ]
 
 ANGRY_RESPONSE = (
     "I sincerely apologize for the inconvenience! 🙏 "
     "I understand your frustration. Please feel free to call us directly at "
-    "**+91-755-2345678** or email **info@sunriseinstitute.ac.in** — "
+    "**+91-751-2970300** or email **info@itmgwalior.ac.in** — "
     "our human counsellors will be happy to assist you."
 )
 
 OUT_OF_SCOPE_RESPONSE = (
     "That's an interesting question, but it's a bit outside my area of expertise! 😄 "
-    "I'm specialized in helping you with information about Sunrise Institute of Technology. "
+    "I'm specialized in helping you with information about Institute of Technology & Management, Gwalior. "
     "Try asking about admissions, courses, fees, or scholarships!"
 )
 
@@ -209,21 +209,21 @@ class ResponseGenerator:
 
     def _handle_greeting(self, entities, context, extra):
         greetings = [
-            "Hello! 👋 Welcome to **Sunrise Institute of Technology, Bhopal**! "
+            "Hello! 👋 Welcome to **Institute of Technology & Management, Gwalior**! "
             "How can I help you today? Ask me about admissions, courses, fees, or scholarships!",
-            "Hi there! 🎓 I'm the Sunrise Institute chatbot. "
+            "Hi there! 🎓 I'm the ITM Gwalior chatbot. "
             "What would you like to know? Admissions, Fees, Courses, or something else?",
-            "Namaste! 🙏 Welcome to Sunrise Institute of Technology. "
+            "Namaste! 🙏 Welcome to Institute of Technology & Management, Gwalior. "
             "I'm here to guide you through your admission journey. What's on your mind?",
         ]
         return random.choice(greetings)
 
     def _handle_goodbye(self, entities, context, extra):
         goodbyes = [
-            "Thank you for chatting with us! 🌅 Best of luck with your admission. "
-            "Feel free to reach out anytime. Visit us at **Sunrise Institute of Technology, Bhopal**!",
+            "Thank you for chatting with us! 🎓 Best of luck with your admission. "
+            "Feel free to reach out anytime. Visit us at **Institute of Technology & Management, Gwalior**!",
             "Goodbye! 👋 Hope to see you on campus soon. "
-            "For more info, visit **www.sunriseinstitute.ac.in**.",
+            "For more info, visit **www.itmgwalior.ac.in**.",
             "Take care! 😊 If you have more questions, we're always here. "
             "All the best for your future!",
         ]
@@ -233,9 +233,9 @@ class ResponseGenerator:
         steps = self.kb.get("admission_process", [])
         steps_text = "\n".join(f"{i+1}. {step}" for i, step in enumerate(steps))
         return (
-            f"📋 **Admission Process at Sunrise Institute of Technology:**\n\n"
+            f"📋 **Admission Process at Institute of Technology & Management, Gwalior:**\n\n"
             f"{steps_text}\n\n"
-            f"For details, visit **www.sunriseinstitute.ac.in** or call **+91-755-2345678**."
+            f"For details, visit **www.itmgwalior.ac.in** or call **+91-751-2970300**."
         )
 
     def _handle_courses_offered(self, entities, context, extra):
@@ -248,7 +248,7 @@ class ResponseGenerator:
             f"  • {c['short']} ({c['duration']}) — ₹{c['fees_per_year']:,}/year" for c in pg
         )
         return (
-            f"🎓 **Courses Offered at Sunrise Institute of Technology:**\n\n"
+            f"🎓 **Courses Offered at Institute of Technology & Management, Gwalior:**\n\n"
             f"**Undergraduate (UG):**\n{ug_list}\n\n"
             f"**Postgraduate (PG):**\n{pg_list}\n\n"
             f"Ask me for details about any specific course!"
@@ -269,8 +269,8 @@ class ResponseGenerator:
 
         # Generic eligibility summary
         return (
-            "📋 **Eligibility Criteria at Sunrise Institute of Technology:**\n\n"
-            "• **B.Tech (CS/EC/ME/CE):** 60% in PCM in 12th + JEE Mains / SITEE\n"
+            "📋 **Eligibility Criteria at Institute of Technology & Management, Gwalior:**\n\n"
+            "• **B.Tech (CS/EC/ME/CE):** 60% in PCM in 12th + JEE Mains (RGPV DTE MP counselling)\n"
             "• **BCA:** 55% in 12th with Mathematics\n"
             "• **BBA / B.Com:** 50% in 12th (any stream)\n"
             "• **B.Sc:** 55% in 12th (Science stream)\n"
@@ -306,7 +306,7 @@ class ResponseGenerator:
             f"  • {c['short']}: **₹{c['fees_per_year']:,}**/year" for c in pg
         )
         return (
-            f"💰 **Fee Structure at Sunrise Institute of Technology:**\n\n"
+            f"💰 **Fee Structure at Institute of Technology & Management, Gwalior:**\n\n"
             f"**UG Courses:**\n{ug_fees}\n\n"
             f"**PG Courses:**\n{pg_fees}\n\n"
             f"💡 Scholarships available for merit (>90%), EWS, SC/ST, and Sports categories!"
@@ -325,7 +325,7 @@ class ResponseGenerator:
             f"• 📋 First Merit List: {dates['first_merit_list']}\n"
             f"• 🗣 Counselling: {dates['counselling_start']} – {dates['counselling_end']}\n"
             f"• 🏫 Classes Begin: **{dates['classes_begin']}**\n\n"
-            f"Don't miss the deadline! Apply at **www.sunriseinstitute.ac.in**"
+            f"Don't miss the deadline! Apply at **www.itmgwalior.ac.in**"
         )
 
     def _handle_documents_needed(self, entities, context, extra):
@@ -363,7 +363,7 @@ class ResponseGenerator:
         c = self.kb["college"]
         phones = " / ".join(c["phone"])
         return (
-            f"📞 **Contact Sunrise Institute of Technology:**\n\n"
+            f"📞 **Contact Institute of Technology & Management, Gwalior:**\n\n"
             f"• 📱 Phone: **{phones}**\n"
             f"• 📧 Email: **{c['email']}**\n"
             f"• 📧 Admissions: {c['admissions_email']}\n"
@@ -383,17 +383,17 @@ class ResponseGenerator:
                 f"   ✅ Eligibility: {s['eligibility']}"
             )
         return (
-            f"🏆 **Scholarship Opportunities at Sunrise Institute:**\n\n"
+            f"🏆 **Scholarship Opportunities at ITM Gwalior:**\n\n"
             + "\n\n".join(lines)
             + "\n\n📝 Apply for scholarship within **30 days of admission**. "
-            "Contact **admissions@sunriseinstitute.ac.in** for details."
+            "Contact **admissions@itmgwalior.ac.in** for details."
         )
 
     def _handle_exam_schedule(self, entities, context, extra):
         dates = self.kb["important_dates"]
         centers = ", ".join(dates["exam_centers"])
         return (
-            f"📝 **Entrance Exam Details (SITEE {dates['academic_year']}):**\n\n"
+            f"📝 **Entrance Exam Details — {dates['academic_year']} Admissions:**\n\n"
             f"• 📅 Date: **{dates['entrance_exam_date']}**\n"
             f"• ⏰ Duration: **3 hours**\n"
             f"• 📋 Pattern: **MCQ (100 questions)**\n"
@@ -402,7 +402,8 @@ class ResponseGenerator:
             f"• 🪪 Admit Card: Available from **{dates['admit_card_release']}**\n"
             f"• 🏙 Exam Centers: {centers}\n"
             f"• 📖 Syllabus: NCERT 11th & 12th standard\n\n"
-            f"Download admit card from **www.sunriseinstitute.ac.in/admit-card**"
+            f"B.Tech admissions follow JEE Mains / RGPV DTE MP counselling. "
+            f"Download admit card from **www.itmgwalior.ac.in/admit-card**"
         )
 
     def _handle_result_status(self, entities, context, extra):
@@ -413,14 +414,14 @@ class ResponseGenerator:
             f"• 📋 First Merit List: **{dates['first_merit_list']}**\n"
             f"• 📋 Second Merit List: **{dates['second_merit_list']}** (if required)\n"
             f"• 🗣 Counselling: {dates['counselling_start']} – {dates['counselling_end']}\n\n"
-            f"🔍 Check results at: **www.sunriseinstitute.ac.in/results**\n"
+            f"🔍 Check results at: **www.itmgwalior.ac.in/results**\n"
             f"You'll need your **roll number** and **date of birth**.\n"
             f"📱 SMS & email notifications will be sent to registered candidates."
         )
 
     def _handle_slot_booking(self, entities, context, extra):
         return (
-            "📅 I'll help you book a counselling appointment at Sunrise Institute! "
+            "📅 I'll help you book a counselling appointment at ITM Gwalior! "
             "Let me collect a few details from you."
         )
 

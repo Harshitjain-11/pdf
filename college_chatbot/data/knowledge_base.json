@@ -1,20 +1,20 @@
 {
   "college": {
-    "name": "Sunrise Institute of Technology",
-    "short_name": "SIT",
-    "established": 2005,
-    "naac_grade": "A+",
+    "name": "Institute of Technology & Management",
+    "short_name": "ITM Gwalior",
+    "established": 1997,
+    "naac_grade": "B++",
     "affiliating_university": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), Bhopal",
-    "type": "Private (Aided)",
-    "location": "Bhopal, Madhya Pradesh",
-    "address": "Sunrise Campus, Raisen Road, Bhopal - 462038, Madhya Pradesh, India",
-    "phone": ["+91-755-2345678", "+91-9876543210"],
-    "email": "info@sunriseinstitute.ac.in",
-    "admissions_email": "admissions@sunriseinstitute.ac.in",
-    "website": "www.sunriseinstitute.ac.in",
-    "google_maps": "https://bit.ly/sunrise-bhopal",
+    "type": "Private (AICTE Approved)",
+    "location": "Gwalior, Madhya Pradesh",
+    "address": "ITM Campus, Turari, NH-75, Gwalior - 474001, Madhya Pradesh, India",
+    "phone": ["+91-751-2970300", "+91-9039019301"],
+    "email": "info@itmgwalior.ac.in",
+    "admissions_email": "admissions@itmgwalior.ac.in",
+    "website": "www.itmgwalior.ac.in",
+    "google_maps": "https://bit.ly/itm-gwalior",
     "office_hours": "Monday to Saturday, 9:00 AM – 5:00 PM",
-    "accreditations": ["NAAC A+", "NBA Accredited", "AICTE Approved", "UGC Recognized"]
+    "accreditations": ["NAAC B++", "AICTE Approved", "UGC Recognized", "RGPV Affiliated"]
   },
   "courses": {
     "ug": [
@@ -23,32 +23,32 @@
         "short": "B.Tech CS",
         "duration": "4 years",
         "seats": 120,
-        "fees_per_year": 85000,
+        "fees_per_year": 87000,
         "eligibility": "60% in PCM (Physics, Chemistry, Maths) in 12th + JEE Mains score",
         "min_percentage": 60,
-        "entrance_exam": "JEE Mains / SITEE (Sunrise Institute Technology Entrance Exam)",
-        "specializations": ["AI & ML", "Data Science", "Cybersecurity", "Cloud Computing"]
+        "entrance_exam": "JEE Mains / RGPV Counselling (DTE MP)",
+        "specializations": ["AI & ML", "Data Science", "Cybersecurity", "IoT"]
       },
       {
         "name": "B.Tech Electronics & Communication Engineering",
         "short": "B.Tech EC",
         "duration": "4 years",
-        "seats": 90,
-        "fees_per_year": 82000,
+        "seats": 60,
+        "fees_per_year": 84000,
         "eligibility": "60% in PCM in 12th + JEE Mains score",
         "min_percentage": 60,
-        "entrance_exam": "JEE Mains / SITEE",
+        "entrance_exam": "JEE Mains / RGPV Counselling (DTE MP)",
         "specializations": ["VLSI Design", "Embedded Systems", "Signal Processing"]
       },
       {
         "name": "B.Tech Mechanical Engineering",
         "short": "B.Tech ME",
         "duration": "4 years",
-        "seats": 90,
-        "fees_per_year": 80000,
+        "seats": 60,
+        "fees_per_year": 82000,
         "eligibility": "60% in PCM in 12th + JEE Mains score",
         "min_percentage": 60,
-        "entrance_exam": "JEE Mains / SITEE",
+        "entrance_exam": "JEE Mains / RGPV Counselling (DTE MP)",
         "specializations": ["Automobile Engineering", "Thermal Engineering", "Manufacturing"]
       },
       {
@@ -56,10 +56,10 @@
         "short": "B.Tech CE",
         "duration": "4 years",
         "seats": 60,
-        "fees_per_year": 78000,
+        "fees_per_year": 80000,
         "eligibility": "60% in PCM in 12th + JEE Mains score",
         "min_percentage": 60,
-        "entrance_exam": "JEE Mains / SITEE",
+        "entrance_exam": "JEE Mains / RGPV Counselling (DTE MP)",
         "specializations": ["Structural Engineering", "Environmental Engineering"]
       },
       {
@@ -67,7 +67,7 @@
         "short": "BCA",
         "duration": "3 years",
         "seats": 60,
-        "fees_per_year": 45000,
+        "fees_per_year": 48000,
         "eligibility": "55% in 12th with Mathematics as a subject",
         "min_percentage": 55,
         "entrance_exam": "Direct Admission / Merit Based",
@@ -78,7 +78,7 @@
         "short": "BBA",
         "duration": "3 years",
         "seats": 60,
-        "fees_per_year": 40000,
+        "fees_per_year": 42000,
         "eligibility": "50% in 12th (any stream)",
         "min_percentage": 50,
         "entrance_exam": "Direct Admission / Merit Based",
@@ -89,18 +89,18 @@
         "short": "B.Sc",
         "duration": "3 years",
         "seats": 60,
-        "fees_per_year": 35000,
+        "fees_per_year": 36000,
         "eligibility": "55% in 12th (Science stream)",
         "min_percentage": 55,
         "entrance_exam": "Direct Admission / Merit Based",
-        "specializations": ["Physics", "Chemistry", "Mathematics", "Biotechnology"]
+        "specializations": ["Physics", "Chemistry", "Mathematics", "Computer Science"]
       },
       {
         "name": "Bachelor of Commerce",
         "short": "B.Com",
         "duration": "3 years",
         "seats": 60,
-        "fees_per_year": 30000,
+        "fees_per_year": 32000,
         "eligibility": "50% in 12th (any stream)",
         "min_percentage": 50,
         "entrance_exam": "Direct Admission / Merit Based",
@@ -113,10 +113,10 @@
         "short": "M.Tech",
         "duration": "2 years",
         "seats": 30,
-        "fees_per_year": 95000,
+        "fees_per_year": 92000,
         "eligibility": "Relevant B.Tech/B.E. with 60% marks + GATE score (preferred)",
         "min_percentage": 60,
-        "entrance_exam": "GATE / SITMEE (Sunrise Institute M.Tech Entrance Exam)",
+        "entrance_exam": "GATE / RGPV M.Tech Entrance",
         "specializations": ["Computer Science", "Electronics", "Mechanical", "Civil"]
       },
       {
@@ -124,7 +124,7 @@
         "short": "MCA",
         "duration": "2 years",
         "seats": 60,
-        "fees_per_year": 55000,
+        "fees_per_year": 58000,
         "eligibility": "BCA/B.Sc (CS/IT)/B.Tech with 55% marks + Mathematics in qualifying exam",
         "min_percentage": 55,
         "entrance_exam": "Direct Admission / Merit Based",
@@ -135,10 +135,10 @@
         "short": "MBA",
         "duration": "2 years",
         "seats": 60,
-        "fees_per_year": 90000,
+        "fees_per_year": 88000,
         "eligibility": "Any graduation with 50% marks + CAT/MAT/XAT score",
         "min_percentage": 50,
-        "entrance_exam": "CAT / MAT / XAT / SITMAT",
+        "entrance_exam": "CAT / MAT / XAT / MP-MAT",
         "specializations": ["Marketing", "Finance", "HR", "Operations", "Business Analytics"]
       },
       {
@@ -146,11 +146,11 @@
         "short": "M.Sc",
         "duration": "2 years",
         "seats": 30,
-        "fees_per_year": 45000,
+        "fees_per_year": 46000,
         "eligibility": "Relevant B.Sc with 55% marks",
         "min_percentage": 55,
         "entrance_exam": "Direct Admission / Merit Based",
-        "specializations": ["Physics", "Chemistry", "Mathematics", "Biotechnology"]
+        "specializations": ["Physics", "Chemistry", "Mathematics", "Computer Science"]
       }
     ]
   },
@@ -167,7 +167,7 @@
     "counselling_start": "July 1, 2025",
     "counselling_end": "July 10, 2025",
     "classes_begin": "August 1, 2025",
-    "exam_centers": ["Bhopal", "Indore", "Jabalpur", "Gwalior", "Ujjain"]
+    "exam_centers": ["Gwalior", "Bhopal", "Indore", "Jabalpur", "Ujjain"]
   },
   "documents_required": [
     "10th Marksheet & Certificate",
@@ -183,23 +183,23 @@
   ],
   "hostel": {
     "boys_hostel": {
-      "name": "Sunrise Boys Hostel",
+      "name": "ITM Boys Hostel",
       "capacity": 500,
-      "fees_per_year": 65000,
+      "fees_per_year": 68000,
       "includes": "Mess charges included",
       "room_types": ["2-sharing", "3-sharing", "4-sharing"],
       "facilities": ["24/7 Security", "WiFi (50 Mbps)", "Hot Water", "Indoor Sports", "Common Room", "Laundry", "Medical Room"]
     },
     "girls_hostel": {
-      "name": "Sunrise Girls Hostel",
+      "name": "ITM Girls Hostel",
       "capacity": 300,
-      "fees_per_year": 70000,
+      "fees_per_year": 72000,
       "includes": "Mess charges included",
       "room_types": ["2-sharing", "3-sharing"],
       "facilities": ["24/7 Security + Female Wardens", "WiFi (50 Mbps)", "Hot Water", "Indoor Sports", "Common Room", "Laundry", "Medical Room", "Salon"]
     },
-    "contact": "hostel@sunriseinstitute.ac.in",
-    "warden_phone": "+91-755-2345679"
+    "contact": "hostel@itmgwalior.ac.in",
+    "warden_phone": "+91-751-2970301"
   },
   "scholarships": [
     {
@@ -236,12 +236,12 @@
     }
   ],
   "admission_process": [
-    "Visit www.sunriseinstitute.ac.in and click on 'Apply Now'",
+    "Visit www.itmgwalior.ac.in and click on 'Apply Now'",
     "Fill the online application form with personal and academic details",
     "Upload required documents (marksheets, Aadhar, photograph)",
     "Pay application fee of ₹500 online",
     "Download admit card for entrance exam (if applicable)",
-    "Appear for SITEE/SITMEE entrance examination",
+    "Appear for JEE Mains / RGPV DTE MP counselling",
     "Check result and merit list on college website",
     "Attend counselling session with original documents",
     "Pay admission fee and confirm your seat",
@@ -249,22 +249,22 @@
   ],
   "facilities": [
     "Central Library with 50,000+ books and e-resources",
-    "Modern Computer Labs (500+ workstations)",
+    "Modern Computer Labs (400+ workstations)",
     "Research & Innovation Center",
-    "Sports Complex (Cricket ground, Football field, Basketball court)",
+    "Sports Complex (Cricket ground, Football field, Basketball court, Badminton courts)",
     "Cafeteria & Food Court",
     "Medical Center",
-    "Auditorium (1000 seating capacity)",
+    "Auditorium (800 seating capacity)",
     "Smart Classrooms",
     "WiFi Campus",
     "Industry Partnership Cell",
-    "Placement Cell (500+ companies visiting annually)"
+    "Placement Cell (300+ companies visiting annually)"
   ],
   "placement": {
-    "placement_rate": "94%",
-    "highest_package": "₹24 LPA",
-    "average_package": "₹6.8 LPA",
-    "top_recruiters": ["TCS", "Infosys", "Wipro", "HCL", "Accenture", "IBM", "Microsoft", "Amazon", "Deloitte", "HDFC Bank"],
-    "placement_cell_email": "placement@sunriseinstitute.ac.in"
+    "placement_rate": "90%",
+    "highest_package": "₹18 LPA",
+    "average_package": "₹5.5 LPA",
+    "top_recruiters": ["TCS", "Infosys", "Wipro", "HCL", "Accenture", "Cognizant", "Tech Mahindra", "IBM", "Capgemini", "HDFC Bank"],
+    "placement_cell_email": "placement@itmgwalior.ac.in"
   }
 }

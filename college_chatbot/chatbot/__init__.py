@@ -1,3 +1,3 @@
 """
-Chatbot package for Sunrise Institute of Technology College Enquiry Chatbot.
+Chatbot package for Institute of Technology & Management, Gwalior — College Enquiry Chatbot.
 """

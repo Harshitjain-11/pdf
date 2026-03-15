@@ -1,4 +1,4 @@
-# Sunrise Institute of Technology — College Enquiry Chatbot
+# Institute of Technology & Management, Gwalior — College Enquiry Chatbot
 
 A production-ready College Enquiry Chatbot built with **Python**, **NLTK**, **Flask**, and **SQLite**.
 
@@ -178,14 +178,14 @@ joblib==1.3.2
 
 ---
 
-## 🏫 About Sunrise Institute of Technology
+## 🏫 About Institute of Technology & Management, Gwalior
 
-- **Location:** Bhopal, Madhya Pradesh
-- **Established:** 2005
-- **NAAC Grade:** A+
-- **Affiliation:** RGPV, Bhopal
-- **Courses:** B.Tech (CS, EC, ME, CE), BCA, BBA, B.Sc, B.Com, M.Tech, MCA, MBA, M.Sc
-- **Placement Rate:** 94% | Avg Package: ₹6.8 LPA | Highest: ₹24 LPA
+- **Location:** Gwalior, Madhya Pradesh
+- **Established:** 1997
+- **NAAC Grade:** B++
+- **Affiliation:** RGPV (Rajiv Gandhi Proudyogiki Vishwavidyalaya), Bhopal
+- **Courses:** B.Tech (CS, EC, ME, CE) — RGPV affiliated, BCA, BBA, B.Sc, B.Com, M.Tech, MCA, MBA, M.Sc
+- **Placement Rate:** 90% | Avg Package: ₹5.5 LPA | Highest: ₹18 LPA
 
 ---
 

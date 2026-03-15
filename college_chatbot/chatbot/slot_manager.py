@@ -250,7 +250,7 @@ class SlotManager:
     def _confirm(self, slots: dict, text: str) -> tuple[str, bool]:
         text_lower = text.strip().lower()
         if text_lower in {"haan", "yes", "y", "confirm", "ok", "okay", "ha"}:
-            booking_id = f"SIT{uuid.uuid4().hex[:8].upper()}"
+            booking_id = f"ITM{uuid.uuid4().hex[:8].upper()}"
             slots["booking_id"] = booking_id
             slots["state"] = SlotState.COMPLETED
             slots["status"] = "pending"
@@ -258,7 +258,7 @@ class SlotManager:
                 f"🎉 **Booking Confirmed!**\n"
                 f"Your booking ID is: **{booking_id}**\n"
                 f"Our team will contact you at {slots.get('phone')} to confirm your appointment.\n"
-                f"You can also call us at +91-755-2345678. See you at Sunrise Institute! 😊",
+                f"You can also call us at +91-751-2970300. See you at ITM Gwalior! 😊",
                 True,
             )
         elif text_lower in {"nahi", "no", "n", "cancel", "nope"}:
