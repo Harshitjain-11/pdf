@@ -1,0 +1,381 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "hi",
+        "hello",
+        "namaste",
+        "good morning",
+        "good afternoon",
+        "good evening",
+        "hey",
+        "hey there",
+        "hii",
+        "helo",
+        "namaskar",
+        "hy",
+        "what's up",
+        "howdy",
+        "greetings",
+        "sup",
+        "yo"
+      ],
+      "responses": [
+        "Hello! Welcome to Institute of Technology & Management, Gwalior. How can I help you today?",
+        "Hi there! I'm the ITM Gwalior chatbot. Ask me anything about admissions, courses, fees, and more!",
+        "Namaste! Welcome to ITM Gwalior. I'm here to help you with your enquiries."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "bye",
+        "goodbye",
+        "ok thanks",
+        "thank you bye",
+        "thanks bye",
+        "see you",
+        "see ya",
+        "later",
+        "ok thank you",
+        "thanks",
+        "thank you",
+        "that's all",
+        "that will be all",
+        "ok that's it",
+        "dhanyawad",
+        "shukriya",
+        "alvida"
+      ],
+      "responses": [
+        "Thank you for contacting Institute of Technology & Management, Gwalior! Feel free to reach out anytime. Good luck!",
+        "Goodbye! Best of luck with your admission. Visit us at ITM Gwalior!",
+        "Thanks for chatting! If you have more questions, we're always here. Have a great day!"
+      ]
+    },
+    {
+      "tag": "admission_process",
+      "patterns": [
+        "how to apply",
+        "admission procedure",
+        "steps for admission",
+        "admission kaise hoga",
+        "how do I get admitted",
+        "admission process",
+        "how to take admission",
+        "kaise apply karein",
+        "addmission process",
+        "how can I apply",
+        "what is the admission process",
+        "apply karna hai",
+        "admission ke liye kya karna hoga",
+        "enrollment process",
+        "how to enroll",
+        "registration process",
+        "how to register"
+      ],
+      "responses": [
+        "The admission process at ITM Gwalior involves: 1) Fill online application form at www.itmgwalior.ac.in, 2) Upload required documents, 3) Pay application fee of ₹500, 4) Appear for JEE Mains / RGPV DTE MP counselling (for B.Tech), 5) Attend counselling session, 6) Pay admission fee and confirm seat."
+      ]
+    },
+    {
+      "tag": "courses_offered",
+      "patterns": [
+        "which courses are available",
+        "list of programs",
+        "what can I study",
+        "what courses do you offer",
+        "available programs",
+        "kaunse course hain",
+        "course list",
+        "which programs are offered",
+        "what are the courses",
+        "courses?",
+        "programs offered",
+        "tell me about courses",
+        "corse list",
+        "what can I do",
+        "available courses",
+        "all courses",
+        "departments"
+      ],
+      "responses": [
+        "ITM Gwalior offers UG and PG programs. UG: B.Tech (CS, EC, ME, CE) affiliated to RGPV Bhopal, BCA, BBA, B.Sc, B.Com. PG: M.Tech, MCA, MBA, M.Sc. Would you like details about any specific course?"
+      ]
+    },
+    {
+      "tag": "eligibility",
+      "patterns": [
+        "what marks are needed",
+        "minimum percentage required",
+        "eligibility criteria",
+        "what qualification is needed",
+        "eligible hoon kya main",
+        "eligiblity for admission",
+        "minimum marks",
+        "percentage required",
+        "what are the requirements",
+        "12th ke baad",
+        "after 12th which course",
+        "qualification required",
+        "eligibility for btech",
+        "who can apply",
+        "am I eligible",
+        "cutoff percentage",
+        "minimum eligibility"
+      ],
+      "responses": [
+        "Eligibility varies by course. B.Tech (RGPV affiliated) requires 60% in PCM in 12th + JEE Mains score. BCA requires 55% in 12th with Maths. BBA requires 50% in any stream in 12th. M.Tech requires relevant B.Tech with 60%. MBA requires graduation with 50% + MAT/CAT score. Which course eligibility would you like to know?"
+      ]
+    },
+    {
+      "tag": "fees_structure",
+      "patterns": [
+        "how much are the fees",
+        "course fee details",
+        "fees kitni hai",
+        "fee structure",
+        "how much does it cost",
+        "fees kya hai",
+        "what is the fee",
+        "tuition fee",
+        "total fees",
+        "fess structure",
+        "charges",
+        "fee details",
+        "kitne paise lagte hain",
+        "fee kya hogi",
+        "annual fee",
+        "semester fee",
+        "fee?",
+        "cost of course"
+      ],
+      "responses": [
+        "Fee structure at ITM Gwalior: B.Tech CS - ₹87,000/year, B.Tech EC/ME/CE - ₹80,000-84,000/year, BCA - ₹48,000/year, BBA - ₹42,000/year, B.Sc - ₹36,000/year, B.Com - ₹32,000/year, M.Tech - ₹92,000/year, MCA - ₹58,000/year, MBA - ₹88,000/year. Scholarships available for merit students!"
+      ]
+    },
+    {
+      "tag": "last_date",
+      "patterns": [
+        "last date to apply",
+        "application deadline",
+        "cutoff date",
+        "last date kya hai",
+        "form last date",
+        "when is the last date",
+        "closing date",
+        "form fill karne ki last date",
+        "deadline for application",
+        "when to apply by",
+        "application close date",
+        "form submission deadline",
+        "admit card date",
+        "last date for registration",
+        "kab tak apply kar sakte hain",
+        "deadline kya hai",
+        "form kab band hoga"
+      ],
+      "responses": [
+        "Important dates for 2025-26 admissions: Form start date: March 1, 2025. Form last date: May 31, 2025. Entrance exam: June 15, 2025. Result declaration: June 25, 2025. Counselling: July 1-10, 2025. Classes begin: August 1, 2025."
+      ]
+    },
+    {
+      "tag": "documents_needed",
+      "patterns": [
+        "required documents",
+        "what papers to bring",
+        "documents list",
+        "kaunse document chahiye",
+        "what documents are needed",
+        "documents required for admission",
+        "papers required",
+        "document checklist",
+        "what to bring for admission",
+        "document kya lagenge",
+        "papers for admission",
+        "documents chahiye",
+        "docoments needed",
+        "admit card requirements",
+        "paperwork needed",
+        "what certificates are needed",
+        "certificates required"
+      ],
+      "responses": [
+        "Documents required for admission: 1) 10th Marksheet & Certificate, 2) 12th/Graduation Marksheet & Certificate, 3) Aadhar Card (both sides), 4) Passport size photographs (6 copies), 5) Caste/Category Certificate (if applicable), 6) Migration Certificate, 7) Character Certificate, 8) Income Certificate (for scholarship), 9) Transfer Certificate. All documents must be self-attested."
+      ]
+    },
+    {
+      "tag": "hostel_info",
+      "patterns": [
+        "hostel facility",
+        "accommodation available",
+        "room availability",
+        "hostel hai kya",
+        "is there a hostel",
+        "hostel information",
+        "boys hostel",
+        "girls hostel",
+        "hostel fees",
+        "hostel ka kiraya",
+        "accommodation for students",
+        "hostel facilities",
+        "stay on campus",
+        "on campus living",
+        "hostel mein rehna hai",
+        "hostel details",
+        "hostel charges"
+      ],
+      "responses": [
+        "ITM Gwalior has excellent hostel facilities. Boys Hostel: Capacity 500 students, Fee ₹68,000/year (with mess). Girls Hostel: Capacity 300 students, Fee ₹72,000/year (with mess). Facilities include: 24/7 security, WiFi, hot water, furnished rooms (2-4 sharing), common room, indoor sports, medical room. Contact: hostel@itmgwalior.ac.in"
+      ]
+    },
+    {
+      "tag": "contact_info",
+      "patterns": [
+        "phone number",
+        "email address",
+        "contact information",
+        "how to reach you",
+        "address",
+        "where are you located",
+        "college address",
+        "contact details",
+        "helpline number",
+        "phone no",
+        "call karein kaise",
+        "email id",
+        "office number",
+        "how to contact",
+        "reach out",
+        "get in touch",
+        "contact karna hai"
+      ],
+      "responses": [
+        "Contact ITM Gwalior: 📞 Phone: +91-751-2970300, +91-9039019301. 📧 Email: info@itmgwalior.ac.in. 🌐 Website: www.itmgwalior.ac.in. 📍 Address: ITM Campus, Turari, NH-75, Gwalior - 474001, Madhya Pradesh. ⏰ Office Hours: Monday-Saturday, 9 AM – 5 PM."
+      ]
+    },
+    {
+      "tag": "scholarship",
+      "patterns": [
+        "scholarship details",
+        "financial aid available",
+        "merit scholarship",
+        "scholarship kaise milega",
+        "is there a scholarship",
+        "scholarship for SC ST",
+        "EWS scholarship",
+        "fee waiver",
+        "scholarship amount",
+        "scholarship information",
+        "stipend",
+        "financial support",
+        "scholership details",
+        "scholarship ke bare mein batao",
+        "free admission",
+        "scholarship kya hai",
+        "merit based scholarship"
+      ],
+      "responses": [
+        "Scholarship opportunities at ITM Gwalior: 1) Merit Scholarship: 50% fee waiver for students with >90% in qualifying exam. 2) EWS Scholarship: 30% fee waiver for economically weaker section (income <2.5L/year). 3) SC/ST Scholarship: Government scholarship + 25% institutional discount. 4) Sports Quota: 20% fee waiver for state/national level athletes. Apply within 30 days of admission."
+      ]
+    },
+    {
+      "tag": "exam_schedule",
+      "patterns": [
+        "entrance exam date",
+        "exam pattern",
+        "exam syllabus",
+        "entrance test schedule",
+        "exam kab hai",
+        "entrance exam kab hoga",
+        "test date",
+        "exam schedule",
+        "when is the exam",
+        "exam details",
+        "entrance examination",
+        "exam format",
+        "exam patten",
+        "syllabus for entrance",
+        "exam duration",
+        "entrance test details",
+        "exam timetable"
+      ],
+      "responses": [
+        "For B.Tech admissions, ITM Gwalior follows RGPV / DTE MP counselling based on JEE Mains score. Exam Date: June 15, 2025. Duration: 3 hours. Pattern: MCQ (100 questions). Subjects: Physics, Chemistry, Maths. Total Marks: 400. Admit Card release: June 8, 2025. Exam centers: Gwalior, Bhopal, Indore, Jabalpur. Syllabus follows NCERT 11th & 12th standard."
+      ]
+    },
+    {
+      "tag": "result_status",
+      "patterns": [
+        "when will results come",
+        "merit list",
+        "selection list",
+        "result kab aayega",
+        "result status",
+        "when are results declared",
+        "result date",
+        "merit list kab aayegi",
+        "am I selected",
+        "result check kaise karein",
+        "how to check result",
+        "result announcement",
+        "result dekh na hai",
+        "selection status",
+        "waitlist status",
+        "result kab",
+        "cut off list"
+      ],
+      "responses": [
+        "Results & Merit List: Entrance exam result: June 25, 2025. Merit list will be published on www.itmgwalior.ac.in/results. You'll need your roll number and date of birth to check. First merit list: July 1, 2025. Second merit list (if required): July 8, 2025. SMS and email notification will be sent to registered candidates."
+      ]
+    },
+    {
+      "tag": "slot_booking",
+      "patterns": [
+        "book an appointment",
+        "schedule a visit",
+        "counselling slot",
+        "I want to visit the college",
+        "campus visit",
+        "book slot",
+        "appointment lena hai",
+        "slot book karna hai",
+        "schedule meeting",
+        "personal counselling",
+        "meet the counsellor",
+        "visit campus",
+        "book a meeting",
+        "appointment chahiye",
+        "counselor se milna hai",
+        "book counselling",
+        "schedule appointment"
+      ],
+      "responses": [
+        "I'd be happy to help you book a counselling appointment at ITM Gwalior! Let me collect your details."
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [
+        "what is the meaning of life",
+        "tell me a joke",
+        "who are you",
+        "asdfgh",
+        "random text",
+        "I don't know",
+        "hmm",
+        "ok",
+        "nothing",
+        "never mind",
+        "forget it",
+        "doesn't matter"
+      ],
+      "responses": [
+        "I'm sorry, I didn't quite understand that. Could you please rephrase your question? I can help you with admissions, courses, fees, eligibility, scholarships, and more!",
+        "I didn't catch that. Could you ask again? I'm here to help with information about Institute of Technology & Management, Gwalior.",
+        "Hmm, I'm not sure I understood. Try asking about: Courses, Fees, Admission Process, Eligibility, or Scholarships!"
+      ]
+    }
+  ]
+}
