@@ -19,7 +19,8 @@ logger = logging.getLogger(__name__)
 PRONOUN_MAP = {
     "uska", "iska", "its", "that course", "wala", "wali",
     "same course", "that", "this", "it", "us", "their",
-    "is course", "us course", "ye", "yeh"
+    "is course", "us course", "ye", "yeh",
+    "uski", "iski", "wahi", "same", "usi ka", "usi ki"
 }
 
 MAX_HISTORY = 10  # keep last N turns per session
@@ -96,6 +97,10 @@ class ContextManager:
             if value is not None:
                 ctx["entities_so_far"][key] = value
 
+        # Track last course separately for pronoun resolution
+        if entities.get("course"):
+            ctx["last_course"] = entities["course"]
+
         ctx["slot_state"] = slot_state
         ctx["turn_count"] += 1
 
@@ -116,24 +121,29 @@ class ContextManager:
         ctx = self.get_or_create(session_id)
         text_lower = text.lower().strip()
 
-        # Check if any pronoun is present
-        has_pronoun = any(pronoun in text_lower for pronoun in PRONOUN_MAP)
+        # Check if any pronoun is present (use word-boundary-aware check)
+        # Sort by length descending so longer matches are attempted first
+        sorted_pronouns = sorted(PRONOUN_MAP, key=len, reverse=True)
+        has_pronoun = any(pronoun in text_lower for pronoun in sorted_pronouns)
         if not has_pronoun:
             return text
 
-        last_course = ctx["entities_so_far"].get("course")
+        last_course = ctx.get("last_course") or ctx["entities_so_far"].get("course")
         if last_course:
             # Replace pronoun with the last mentioned course
-            for pronoun in PRONOUN_MAP:
+            for pronoun in sorted_pronouns:
                 if pronoun in text_lower:
-                    text = re.sub(
+                    # Try word-boundary replacement first
+                    new_text = re.sub(
                         rf"\b{re.escape(pronoun)}\b",
                         last_course,
                         text,
                         flags=re.IGNORECASE,
                     )
-                    logger.debug("Resolved '%s' → '%s' in: %r", pronoun, last_course, text)
-                    break
+                    if new_text != text:
+                        text = new_text
+                        logger.debug("Resolved '%s' → '%s' in: %r", pronoun, last_course, text)
+                        break
 
         return text
 
@@ -168,6 +178,7 @@ class ContextManager:
             "previous_intent": None,
             "slot_state": "IDLE",
             "entities_so_far": {},
+            "last_course": None,
             "turn_count": 0,
             "created_at": datetime.utcnow().isoformat(),
         }

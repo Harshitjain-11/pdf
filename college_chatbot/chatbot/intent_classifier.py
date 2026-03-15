@@ -163,9 +163,66 @@ class IntentClassifier:
         anger_words = {
             "useless", "worst", "pathetic", "terrible", "horrible",
             "stupid", "idiot", "waste", "rubbish", "garbage", "hate",
-            "disgusting", "awful", "ridiculous", "nonsense"
+            "disgusting", "awful", "ridiculous", "nonsense",
+            "bakwas", "bekar", "kuch nahi aata", "stupid bot"
         }
-        return bool(anger_words.intersection(set(tokens)))
+        token_set = set(tokens)
+        text_str = " ".join(tokens)
+        if anger_words.intersection(token_set):
+            return True
+        # Check multi-word anger phrases
+        for phrase in ("kuch nahi aata", "stupid bot", "bakwas", "bekar"):
+            if phrase in text_str:
+                return True
+        return False
+
+    def classify_compound(self, message: str) -> list[tuple[str, float]] | None:
+        """
+        Detect multiple intents in a single message.
+
+        Splits on 'aur', 'and', 'bhi', 'also', 'plus', 'saath mein'
+        and classifies each part separately.
+
+        Args:
+            message: Raw user message.
+
+        Returns:
+            List of (intent, confidence) tuples if multiple intents found,
+            else None (caller should use normal single-intent flow).
+        """
+        SPLIT_WORDS = [
+            " aur ", " and ", " bhi ", " also ",
+            " plus ", " saath ", " ke saath ", " with "
+        ]
+        parts = [message]
+        for sw in SPLIT_WORDS:
+            new_parts = []
+            for p in parts:
+                new_parts.extend(p.split(sw))
+            parts = new_parts
+
+        parts = [p.strip() for p in parts if len(p.strip()) > 3]
+
+        if len(parts) <= 1:
+            return None
+
+        results = []
+        for part in parts:
+            result = self.classify(part)
+            intent = result["intent"]
+            conf = result["confidence"]
+            if conf > 0.2 and intent != "fallback":
+                results.append((intent, conf))
+
+        # Deduplicate while preserving order
+        seen: set[str] = set()
+        unique: list[tuple[str, float]] = []
+        for intent, conf in results:
+            if intent not in seen:
+                seen.add(intent)
+                unique.append((intent, conf))
+
+        return unique if len(unique) > 1 else None
 
     def _log(self, session_id: str, user_text: str, result: dict) -> None:
         """

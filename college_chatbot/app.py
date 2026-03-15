@@ -11,6 +11,7 @@ Routes:
 
 import os
 import io
+import re
 import csv
 import json
 import logging
@@ -63,6 +64,30 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# ── Quick-reply button text → intent (BUG 1 FIX) ────────────────────────────
+
+QUICK_REPLY_MAP: dict[str, str] = {
+    "Book Appointment": "slot_booking",
+    "Courses Offered": "courses_offered",
+    "Fee Structure": "fees_structure",
+    "Admission Process": "admission_process",
+    "Contact Us": "contact_info",
+    "Scholarship Info": "scholarship",
+    "Eligibility Criteria": "eligibility",
+    "Eligibility": "eligibility",
+    "Documents Needed": "documents_needed",
+    "Last Date to Apply": "last_date",
+    "Last Date": "last_date",
+    "B.Tech Details": "course_detail",
+    "Apply Now": "slot_booking",
+    "Book Campus Visit": "slot_booking",
+    "Cancel Booking": "cancel_booking",
+    "Placement Info": "placement_info",
+    "Hostel Info": "hostel_info",
+    "Faculty Info": "faculty_info",
+    "Campus Life": "campus_life",
+}
+
 # ── Flask app ──────────────────────────────────────────────────────────────────
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
@@ -99,6 +124,38 @@ def _initialize_components() -> None:
 
     model_loaded = True
     logger.info("All components initialized successfully.")
+
+
+# ── Message preprocessing (PART H edge cases) ───────────────────────────────
+
+# Emoji pattern for stripping
+_EMOJI_RE = re.compile(
+    "["
+    "\U0001F600-\U0001F64F"
+    "\U0001F300-\U0001F5FF"
+    "\U0001F680-\U0001F6FF"
+    "\U0001F1E0-\U0001F1FF"
+    "\U00002702-\U000027B0"
+    "\U000024C2-\U0001F251"
+    "\U0001F900-\U0001F9FF"
+    "\U0001FA00-\U0001FA6F"
+    "\U0001FA70-\U0001FAFF"
+    "\U00002600-\U000026FF"
+    "]+",
+    flags=re.UNICODE,
+)
+
+
+def _preprocess_message(text: str) -> str:
+    """
+    Clean user input: lowercase, strip emoji, collapse whitespace,
+    remove excess dots/special chars.
+    """
+    text = _EMOJI_RE.sub("", text)
+    text = re.sub(r"\.{2,}", " ", text)
+    text = re.sub(r"\?{2,}", "?", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
 
 
 # ── HTTP Basic Auth helper ────────────────────────────────────────────────────
@@ -156,37 +213,101 @@ def chat():
         return jsonify({"error": "Model not loaded yet. Please retry."}), 503
 
     data = request.get_json(silent=True) or {}
-    user_message: str = (data.get("message") or "").strip()
+    raw_message: str = (data.get("message") or "").strip()
     session_id: str = (data.get("session_id") or "default").strip()
 
-    if not user_message:
+    if not raw_message:
         return jsonify({"error": "Empty message."}), 400
 
-    logger.info("session=%s message=%r", session_id, user_message)
+    logger.info("session=%s message=%r", session_id, raw_message)
 
-    # Context resolution (pronoun / anaphora)
-    resolved_message = context_manager.resolve_text(session_id, user_message)
+    # ── BUG 1 FIX: Quick-reply button → skip NLP ──────────────────────
+    if raw_message in QUICK_REPLY_MAP:
+        intent = QUICK_REPLY_MAP[raw_message]
+        confidence = 1.0
+        entities: dict = {}
 
-    # Entity extraction
-    entities = entity_extractor.extract(resolved_message)
+        # Handle cancel from quick reply
+        if intent == "cancel_booking" and slot_manager.is_active(session_id):
+            slot_manager.cancel(session_id)
+            return jsonify({
+                "reply": "Theek hai, booking cancel kar di! 😊 Koi aur cheez mein help karoon?",
+                "quick_replies": ["Courses Offered", "Fee Structure", "Admission Process", "Contact Us"],
+                "intent": "cancel_booking",
+                "confidence": 1.0,
+                "slot_state": "CANCELLED",
+                "booking_id": None,
+            })
 
-    # Intent classification
-    classification = intent_classifier.classify(resolved_message, session_id=session_id)
-    intent: str = classification["intent"]
-    confidence: float = classification["confidence"]
+        # course_detail → treat as courses_offered
+        if intent == "course_detail":
+            intent = "courses_offered"
+    else:
+        # ── Preprocessing (PART H edge cases) ─────────────────────────
+        user_message = _preprocess_message(raw_message)
 
-    # Slot-filling state machine
+        # Context resolution (pronoun / anaphora)
+        resolved_message = context_manager.resolve_text(session_id, user_message)
+
+        # Entity extraction
+        entities = entity_extractor.extract(resolved_message)
+
+        # ── BUG 6: Compound query check ───────────────────────────────
+        compound = intent_classifier.classify_compound(resolved_message)
+        if compound and not slot_manager.is_active(session_id):
+            ctx = context_manager.get_or_create(session_id)
+            combined_response = ""
+            for comp_intent, comp_conf in compound:
+                r, _ = response_generator.generate(
+                    intent=comp_intent,
+                    entities=entities,
+                    context=ctx,
+                )
+                combined_response += r + "\n\n─────────\n\n"
+
+            quick_replies = QUICK_REPLIES.get(compound[0][0], QUICK_REPLIES.get("fallback", []))
+            context_manager.update(
+                session_id=session_id,
+                user_message=raw_message,
+                bot_response=combined_response.strip(),
+                intent="compound",
+                entities=entities,
+            )
+            try:
+                save_enquiry_log(session_id, raw_message, combined_response.strip(), "compound", 1.0)
+            except Exception as exc:
+                logger.error("Failed to save enquiry log: %s", exc)
+            return jsonify({
+                "reply": combined_response.strip(),
+                "quick_replies": quick_replies,
+                "intent": "compound",
+                "confidence": 1.0,
+                "slot_state": "IDLE",
+                "booking_id": None,
+            })
+
+        # Intent classification
+        classification = intent_classifier.classify(resolved_message, session_id=session_id)
+        intent = classification["intent"]
+        confidence = classification["confidence"]
+
+    # ── Slot-filling state machine ────────────────────────────────────
     booking_id: str | None = None
     slot_prompt: str | None = None
     current_slot_state = slot_manager.get_state(session_id)
 
     if intent == "slot_booking" and not slot_manager.is_active(session_id):
-        # Start booking flow
         slot_prompt = slot_manager.start_booking(session_id, entities)
         current_slot_state = slot_manager.get_state(session_id)
     elif slot_manager.is_active(session_id):
-        # Continue booking flow
-        slot_prompt, completed = slot_manager.process_input(session_id, user_message, entities)
+        slot_prompt, completed = slot_manager.process_input(
+            session_id,
+            raw_message,
+            entities,
+            detected_intent=intent,
+            response_generator=response_generator,
+            context=context_manager.get_or_create(session_id),
+        )
         current_slot_state = slot_manager.get_state(session_id)
 
         if completed:
@@ -194,11 +315,10 @@ def chat():
             booking_id = save_appointment(slots)
             save_lead(session_id, {**entities, **slots})
         elif current_slot_state == SlotState.CANCELLED:
-            # Save partial lead on cancellation
             slots = slot_manager.get_slots(session_id)
             save_lead(session_id, {**entities, **slots})
 
-    # Generate response
+    # ── Generate response ─────────────────────────────────────────────
     ctx = context_manager.get_or_create(session_id)
     reply, quick_replies = response_generator.generate(
         intent=intent,
@@ -208,17 +328,28 @@ def chat():
         extra_data={"slot_prompt": slot_prompt},
     )
 
-    # Slot prompt overrides generated response during active/completed/cancelled slot flow
+    # Slot prompt overrides generated response
     if slot_prompt:
         reply = slot_prompt
-        quick_replies = QUICK_REPLIES.get("slot_booking", []) if current_slot_state in (
-            SlotState.COMPLETED, SlotState.CANCELLED
-        ) else []
+        if current_slot_state in (SlotState.COMPLETED, SlotState.CANCELLED):
+            quick_replies = ["Courses Offered", "Fee Structure", "Admission Process", "Contact Us"]
+        else:
+            quick_replies = ["Cancel Booking"]
 
-    # Update context
+    # ── PART H: Repeat question detection ─────────────────────────────
+    history = context_manager.get_history(session_id)
+    if len(history) >= 1 and not slot_prompt:
+        prev_intents = [h.get("intent") for h in history[-3:]]
+        if intent in prev_intents and intent not in ("greeting", "goodbye", "fallback", "slot_booking"):
+            reply = (
+                "(Yeh information pehle bhi share ki thi, par dobara yahan hai!)\n\n"
+                + reply
+            )
+
+    # ── Update context ────────────────────────────────────────────────
     context_manager.update(
         session_id=session_id,
-        user_message=user_message,
+        user_message=raw_message,
         bot_response=reply,
         intent=intent,
         entities=entities,
@@ -227,7 +358,7 @@ def chat():
 
     # Persist enquiry log
     try:
-        save_enquiry_log(session_id, user_message, reply, intent, confidence)
+        save_enquiry_log(session_id, raw_message, reply, intent, confidence)
     except Exception as exc:
         logger.error("Failed to save enquiry log: %s", exc)
 

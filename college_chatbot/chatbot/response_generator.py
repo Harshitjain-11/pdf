@@ -15,93 +15,107 @@ logger = logging.getLogger(__name__)
 BASE_DIR = Path(__file__).resolve().parent.parent
 KB_PATH = BASE_DIR / "data" / "knowledge_base.json"
 
-# Quick reply suggestions per intent
+# Quick reply suggestions per intent (PART G — Dynamic System)
 QUICK_REPLIES: dict[str, list[str]] = {
-    "greeting": [
-        "Admission Process",
-        "Courses Offered",
-        "Fee Structure",
-        "Book Appointment",
-    ],
-    "admission_process": [
-        "Documents Needed",
-        "Last Date to Apply",
-        "Eligibility Criteria",
-        "Fee Structure",
+    "fees_structure": [
+        "Scholarship Info", "Eligibility Criteria",
+        "Documents Needed", "Apply Now",
     ],
     "courses_offered": [
-        "B.Tech Details",
-        "Fee Structure",
-        "Eligibility",
-        "Scholarship Info",
+        "B.Tech Details", "Fee Structure",
+        "Placement Info", "Eligibility Criteria",
+    ],
+    "admission_process": [
+        "Documents Needed", "Last Date to Apply",
+        "Fee Structure", "Book Campus Visit",
     ],
     "eligibility": [
-        "Courses Offered",
-        "Fee Structure",
-        "Admission Process",
-        "Contact Us",
+        "Fee Structure", "Admission Process",
+        "Documents Needed", "Book Campus Visit",
     ],
-    "fees_structure": [
-        "Scholarship Info",
-        "Apply Now",
-        "Documents Needed",
-        "Contact Us",
-    ],
-    "last_date": [
-        "Admission Process",
-        "Documents Needed",
-        "Contact Us",
-        "Book Appointment",
+    "placement_info": [
+        "Courses Offered", "Fee Structure",
+        "Contact Us", "Book Campus Visit",
     ],
     "documents_needed": [
-        "Admission Process",
-        "Fee Structure",
-        "Contact Us",
-        "Book Appointment",
+        "Admission Process", "Fee Structure",
+        "Last Date to Apply", "Book Campus Visit",
     ],
-    "hostel_info": [
-        "Fee Structure",
-        "Contact Us",
-        "Admission Process",
-        "Book Appointment",
-    ],
-    "contact_info": [
-        "Admission Process",
-        "Book Appointment",
-        "Courses Offered",
-        "Fee Structure",
+    "last_date": [
+        "Admission Process", "Documents Needed",
+        "Book Campus Visit", "Contact Us",
     ],
     "scholarship": [
-        "Eligibility Criteria",
-        "Fee Structure",
-        "Admission Process",
-        "Contact Us",
+        "Eligibility Criteria", "Fee Structure",
+        "Admission Process", "Contact Us",
+    ],
+    "hostel_info": [
+        "Fee Structure", "Contact Us",
+        "Book Campus Visit", "Courses Offered",
+    ],
+    "slot_booking": ["Cancel Booking"],
+    "greeting": [
+        "Courses Offered", "Fee Structure",
+        "Admission Process", "Book Appointment",
+    ],
+    "contact_info": [
+        "Book Campus Visit", "Admission Process",
+        "Courses Offered", "Fee Structure",
+    ],
+    "campus_life": [
+        "Fee Structure", "Placement Info",
+        "Contact Us", "Book Campus Visit",
+    ],
+    "lateral_entry": [
+        "Eligibility Criteria", "Documents Needed",
+        "Fee Structure", "Contact Us",
+    ],
+    "fallback": [
+        "Courses Offered", "Fee Structure",
+        "Admission Process", "Contact Us",
+    ],
+    "angry_user": ["Contact Us", "Book Campus Visit"],
+    "out_of_scope": [
+        "Courses Offered", "Fee Structure",
+        "Admission Process", "Book Appointment",
     ],
     "exam_schedule": [
-        "Admission Process",
-        "Last Date to Apply",
-        "Result Status",
-        "Eligibility",
+        "Admission Process", "Last Date to Apply",
+        "Eligibility Criteria", "Contact Us",
     ],
     "result_status": [
-        "Counselling Slots",
-        "Documents Needed",
-        "Contact Us",
-        "Fee Structure",
-    ],
-    "slot_booking": [
-        "Fee Structure",
-        "Courses Offered",
-        "Contact Us",
+        "Documents Needed", "Fee Structure",
+        "Contact Us", "Book Campus Visit",
     ],
     "goodbye": [],
-    "fallback": [
-        "Admission Process",
-        "Courses Offered",
-        "Fee Structure",
-        "Contact Us",
+    "naac_ranking": [
+        "Courses Offered", "Placement Info",
+        "Fee Structure", "Contact Us",
     ],
-    "angry_user": ["Contact Us", "Book Appointment"],
+    "anti_ragging": [
+        "Contact Us", "Admission Process",
+        "Courses Offered", "Book Campus Visit",
+    ],
+    "refund_policy": [
+        "Fee Structure", "Admission Process",
+        "Contact Us", "Documents Needed",
+    ],
+    "nri_quota": [
+        "Fee Structure", "Eligibility Criteria",
+        "Admission Process", "Contact Us",
+    ],
+    "events_fest": [
+        "Courses Offered", "Placement Info",
+        "Contact Us", "Book Campus Visit",
+    ],
+    "comparison": [
+        "Courses Offered", "Placement Info",
+        "Fee Structure", "Book Campus Visit",
+    ],
+    "faculty_info": [
+        "Courses Offered", "Placement Info",
+        "Fee Structure", "Contact Us",
+    ],
 }
 
 FALLBACK_RESPONSES = [
@@ -120,16 +134,17 @@ FALLBACK_RESPONSES = [
 ]
 
 ANGRY_RESPONSE = (
-    "I sincerely apologize for the inconvenience! 🙏 "
-    "I understand your frustration. Please feel free to call us directly at "
-    "**+91-751-2970300** or email **info@itmgwalior.ac.in** — "
-    "our human counsellors will be happy to assist you."
+    "Mujhe bahut afsos hai ki aapko accha experience nahi "
+    "mila. 😔 Mein abhi bhi poori koshish karoonga aapki "
+    "help karne ki. Ya phir directly humse baat karein:\n"
+    "📞 +91-751-2970300\n📧 info@itmgwalior.ac.in"
 )
 
 OUT_OF_SCOPE_RESPONSE = (
-    "That's an interesting question, but it's a bit outside my area of expertise! 😄 "
-    "I'm specialized in helping you with information about Institute of Technology & Management, Gwalior. "
-    "Try asking about admissions, courses, fees, or scholarships!"
+    "Yeh meri expertise se thoda bahar hai! 😅 Mein sirf "
+    "ITM Gwalior ke admissions, courses, placements aur "
+    "campus life ke baare mein help kar sakta hoon.\n\n"
+    "Kya mein inn topics mein se kisi mein help karoon?"
 )
 
 
@@ -203,6 +218,17 @@ class ResponseGenerator:
             "result_status": self._handle_result_status,
             "slot_booking": self._handle_slot_booking,
             "angry_user": self._handle_angry,
+            "out_of_scope": self._handle_out_of_scope,
+            "placement_info": self._handle_placement_info,
+            "campus_life": self._handle_campus_life,
+            "faculty_info": self._handle_faculty_info,
+            "lateral_entry": self._handle_lateral_entry,
+            "naac_ranking": self._handle_naac_ranking,
+            "anti_ragging": self._handle_anti_ragging,
+            "refund_policy": self._handle_refund_policy,
+            "nri_quota": self._handle_nri_quota,
+            "events_fest": self._handle_events_fest,
+            "comparison": self._handle_comparison,
             "fallback": self._handle_fallback,
         }
         return handlers.get(intent, self._handle_fallback)
@@ -329,7 +355,23 @@ class ResponseGenerator:
         )
 
     def _handle_documents_needed(self, entities, context, extra):
-        docs = self.kb["documents_required"]
+        docs_detailed = self.kb.get("documents_detailed")
+        if docs_detailed:
+            mandatory = "\n".join(
+                f"  {i+1}. {doc}" for i, doc in enumerate(docs_detailed["mandatory"])
+            )
+            conditional = "\n".join(
+                f"  • {doc}" for doc in docs_detailed["conditional"]
+            )
+            notes = docs_detailed.get("notes", "")
+            return (
+                f"📁 ITM Gwalior Admission Documents:\n\n"
+                f"✅ Mandatory Documents:\n{mandatory}\n\n"
+                f"📎 Conditional (agar applicable ho):\n{conditional}\n\n"
+                f"⚠️ {notes}"
+            )
+        # Fallback to simple list
+        docs = self.kb.get("documents_required", [])
         docs_text = "\n".join(f"{i+1}. {doc}" for i, doc in enumerate(docs))
         return (
             f"📄 **Documents Required for Admission:**\n\n"
@@ -428,8 +470,152 @@ class ResponseGenerator:
     def _handle_angry(self, entities, context, extra):
         return ANGRY_RESPONSE
 
+    def _handle_out_of_scope(self, entities, context, extra):
+        return OUT_OF_SCOPE_RESPONSE
+
     def _handle_fallback(self, entities, context, extra):
         return random.choice(FALLBACK_RESPONSES)
+
+    def _handle_placement_info(self, entities, context, extra):
+        placements = self.kb.get("placements", {})
+        if not placements:
+            return "ITM Gwalior has excellent placement records. Contact placement cell for details."
+        recruiters_list = "\n".join(
+            f"  • {r['name']} — ₹{r['package_lpa']} LPA ({', '.join(r['roles'])})"
+            for r in placements.get("top_recruiters", [])
+        )
+        branch_wise = "\n".join(
+            f"  • {branch}: {pct}"
+            for branch, pct in placements.get("branch_wise", {}).items()
+        )
+        return (
+            f"🏢 ITM Gwalior Placement Record {placements.get('year', '')}:\n\n"
+            f"• Overall Placement: {placements.get('overall_percentage', 'N/A')}\n"
+            f"• Average Package: ₹{placements.get('average_package_lpa', 'N/A')} LPA\n"
+            f"• Highest Package: ₹{placements.get('highest_package_lpa', 'N/A')} LPA\n\n"
+            f"🌟 Top Recruiters:\n{recruiters_list}\n\n"
+            f"📊 Branch-wise:\n{branch_wise}\n\n"
+            f"Branch-wise placement bhi batayein?"
+        )
+
+    def _handle_campus_life(self, entities, context, extra):
+        campus = self.kb.get("campus", {})
+        if not campus:
+            return "ITM Gwalior has a vibrant campus with modern facilities!"
+        labs = ", ".join(campus.get("labs", [])[:6])
+        sports = ", ".join(campus.get("sports", [])[:6])
+        return (
+            f"🏫 ITM Gwalior Campus Life:\n\n"
+            f"• Area: {campus.get('area_acres', 'N/A')} acres\n"
+            f"• WiFi: {campus.get('wifi', 'Available')}\n"
+            f"• Library: {campus.get('library_books', 'N/A')}+ books\n"
+            f"• Labs: {labs}\n"
+            f"• Sports: {sports}\n"
+            f"• NAAC Grade: {campus.get('naac_grade', 'N/A')}\n\n"
+            f"Aur kuch jaanna hai campus ke baare mein?"
+        )
+
+    def _handle_faculty_info(self, entities, context, extra):
+        campus = self.kb.get("campus", {})
+        labs = ", ".join(campus.get("labs", [])) if campus else "Multiple labs"
+        return (
+            "👨‍🏫 ITM Gwalior Faculty Information:\n\n"
+            "• Experienced faculty with PhD and industry background\n"
+            "• Regular workshops and seminars\n"
+            "• Research-oriented teaching methodology\n"
+            f"• Labs: {labs}\n"
+            "• Industry collaboration for practical exposure\n\n"
+            "Kisi specific department ke baare mein jaanna hai?"
+        )
+
+    def _handle_lateral_entry(self, entities, context, extra):
+        le = self.kb.get("lateral_entry", {})
+        if not le:
+            return "Lateral entry admission available hai ITM Gwalior mein. Details ke liye contact karein."
+        return (
+            "🎓 Lateral Entry (Direct 2nd Year) — ITM Gwalior:\n\n"
+            f"• Eligibility: {le.get('eligibility', 'N/A')}\n"
+            f"• Direct admission: {le.get('direct_admission_to', 'N/A')}\n"
+            f"• Available seats: {le.get('seats', 'N/A')}\n"
+            f"• Last date: {le.get('last_date', 'N/A')}\n"
+            f"• Process: {le.get('process', 'N/A')}\n\n"
+            "Documents aur process ke baare mein aur jaanna chahte ho?"
+        )
+
+    def _handle_naac_ranking(self, entities, context, extra):
+        college = self.kb.get("college", {})
+        campus = self.kb.get("campus", {})
+        return (
+            "🏆 ITM Gwalior Rankings & Accreditation:\n\n"
+            f"• NAAC Grade: {college.get('naac_grade', 'N/A')}\n"
+            f"• Affiliated to: {college.get('affiliating_university', 'RGPV Bhopal')}\n"
+            f"• Type: {college.get('type', 'N/A')}\n"
+            f"• Established: {college.get('established', 'N/A')}\n"
+            f"• UGC Approved: {'Yes' if campus.get('ugc_approved') else 'Yes'}\n"
+            f"• Accreditations: {', '.join(college.get('accreditations', []))}\n\n"
+            "Aur kuch jaanna hai?"
+        )
+
+    def _handle_anti_ragging(self, entities, context, extra):
+        ar = self.kb.get("anti_ragging", {})
+        if not ar:
+            return "ITM Gwalior has strict anti-ragging policy. Contact college for details."
+        return (
+            "🛡️ Anti-Ragging Policy — ITM Gwalior:\n\n"
+            f"• Policy: {ar.get('policy', 'Zero tolerance')}\n"
+            f"• Helpline: {ar.get('helpline', 'N/A')}\n"
+            f"• College Committee: {ar.get('college_committee', 'N/A')}\n"
+            f"• Email: {ar.get('email', 'N/A')}\n\n"
+            "Campus bilkul safe hai! Koi bhi complaint ho toh turant action liya jaata hai."
+        )
+
+    def _handle_refund_policy(self, entities, context, extra):
+        rp = self.kb.get("refund_policy", {})
+        if not rp:
+            return "Refund policy ke liye admission office se contact karein."
+        return (
+            "💰 Refund Policy — ITM Gwalior:\n\n"
+            f"• Before July 15: {rp.get('before_july_15', 'N/A')}\n"
+            f"• July 15 to Aug 1: {rp.get('july_15_to_aug_1', 'N/A')}\n"
+            f"• After Aug 1: {rp.get('after_aug_1', 'N/A')}\n\n"
+            "Aur kuch jaanna hai?"
+        )
+
+    def _handle_nri_quota(self, entities, context, extra):
+        return (
+            "🌏 NRI / Management Quota — ITM Gwalior:\n\n"
+            "• NRI quota seats available hain selected courses mein\n"
+            "• Management quota admission bhi available hai\n"
+            "• Direct application through college admission office\n"
+            "• Documents: Passport, visa, NRI certificate (if applicable)\n\n"
+            "Details ke liye admissions office se contact karein:\n"
+            "📞 +91-751-2970300\n"
+            "📧 admissions@itmgwalior.ac.in"
+        )
+
+    def _handle_events_fest(self, entities, context, extra):
+        return (
+            "🎉 Events & Fests — ITM Gwalior:\n\n"
+            "• 💻 Tech Fest: Annual technical festival with hackathons, coding contests\n"
+            "• 🎭 Cultural Fest: Music, dance, drama, art competitions\n"
+            "• 🏏 Sports Day: Annual sports meet with inter-college competitions\n"
+            "• 🎓 Workshops & Seminars: Industry experts ke sessions\n"
+            "• 🤝 Club Activities: Coding club, robotics club, literary club\n\n"
+            "Campus life bahut vibrant hai! Aur kuch jaanna hai?"
+        )
+
+    def _handle_comparison(self, entities, context, extra):
+        college = self.kb.get("college", {})
+        placements = self.kb.get("placements", {})
+        naac = college.get("naac_grade", "B++")
+        pct = placements.get("overall_percentage", "85%")
+        return (
+            f"ITM Gwalior apne region ke top engineering colleges mein "
+            f"se ek hai. NAAC {naac} grade, RGPV affiliated, "
+            f"aur {pct} placement record ke saath "
+            f"yeh ek solid choice hai. Kisi specific aspect ka "
+            f"comparison chahiye?"
+        )
 
     # ------------------------------------------------------------------
     # Private helpers

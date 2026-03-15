@@ -52,43 +52,60 @@ class NLPEngine:
 
     # High-signal keywords per intent for confidence boosting
     KEYWORD_BOOST_MAP = {
-        "greeting": ["hi", "hello", "namaste", "hey", "greet", "namaskar"],
+        "greeting": [
+            "hi", "hello", "namaste", "hey", "greet", "namaskar",
+            "helo", "hii", "kya haal", "good morning"
+        ],
         "goodbye": ["bye", "goodbye", "thanks", "thank", "dhanyawad", "alvida"],
         "admission_process": [
             "admission", "apply", "addmission", "enroll", "register",
-            "process", "procedure", "kaise", "karein"
+            "process", "procedure", "kaise", "karein",
+            "kaise hoga", "kaise le", "lena hai",
+            "admission chahiye", "leni hai", "kaise milega"
         ],
         "courses_offered": [
             "course", "courses", "corse", "program", "programs",
-            "department", "study", "btech", "bca", "bba", "mba"
+            "department", "study", "btech", "bca", "bba", "mba",
+            "kya padhenge", "kya hai", "programme", "branch",
+            "stream", "subjects"
         ],
         "eligibility": [
             "eligib", "eligible", "marks", "percentage", "qualify",
-            "qualification", "minimum", "criteria", "requirement", "cutoff"
+            "qualification", "minimum", "criteria", "requirement", "cutoff",
+            "marks chahiye", "kitne marks", "12th mein",
+            "minimum marks", "cutoff marks"
         ],
         "fees_structure": [
             "fee", "fees", "fess", "cost", "charge", "charges",
-            "kitni", "paise", "rupee", "inr", "annual", "semester", "tuition"
+            "kitni", "paise", "rupee", "inr", "annual", "semester", "tuition",
+            "kitna", "paisa", "rupaye", "kitne paise",
+            "fees kya", "fees batao", "fees hai"
         ],
         "last_date": [
             "last", "deadline", "date", "closing", "close",
-            "kab", "last date", "cutoff date", "registration close"
+            "kab", "last date", "cutoff date", "registration close",
+            "kab tak", "kitne din", "form kab", "form ki date",
+            "apply kab tak"
         ],
         "documents_needed": [
             "document", "documents", "docoments", "certificate", "paper",
-            "papers", "marksheet", "aadhar", "photograph", "bring"
+            "papers", "marksheet", "aadhar", "photograph", "bring",
+            "kya laana", "kya chahiye"
         ],
         "hostel_info": [
             "hostel", "accommodation", "room", "stay", "lodge",
-            "boarding", "campus", "boys hostel", "girls hostel"
+            "boarding", "campus", "boys hostel", "girls hostel",
+            "rehna", "pg", "paying guest"
         ],
         "contact_info": [
             "contact", "phone", "email", "address", "reach",
-            "call", "helpline", "number", "location", "map"
+            "call", "helpline", "number", "location", "map",
+            "kahan hai", "kaise pahunche"
         ],
         "scholarship": [
             "scholarship", "scholership", "financial", "aid", "merit",
-            "waiver", "discount", "stipend", "free", "ews", "sc", "st"
+            "waiver", "discount", "stipend", "free", "ews", "sc", "st",
+            "concession", "financial aid", "free mein"
         ],
         "exam_schedule": [
             "exam", "examination", "test", "schedule", "date",
@@ -100,7 +117,100 @@ class NLPEngine:
         ],
         "slot_booking": [
             "book", "appointment", "slot", "visit", "counselling",
-            "counseling", "schedule", "meeting", "campus visit"
+            "counseling", "schedule", "meeting", "campus visit",
+            "milna", "aana", "college dekhna", "baat karni hai",
+            "kab aayein", "kab milein"
+        ],
+        "placement_info": [
+            "placement", "job", "package", "company",
+            "naukri", "salary", "campus placement",
+            "placements kaisi hain", "kaun si company"
+        ],
+        "campus_life": [
+            "canteen", "sports facility", "gym", "library",
+            "wifi", "extracurricular", "clubs", "activities",
+            "campus life", "college life"
+        ],
+        "faculty_info": [
+            "teachers", "faculty", "professors", "labs",
+            "research", "phd faculty", "teaching quality"
+        ],
+        "lateral_entry": [
+            "lateral entry", "direct second year", "diploma",
+            "polytechnic", "le admission"
+        ],
+        "naac_ranking": [
+            "naac", "ranking", "nirf", "accreditation",
+            "rank", "recognized", "ugc approved"
+        ],
+        "anti_ragging": [
+            "ragging", "anti ragging", "safe", "committee",
+            "complaint", "campus safety"
+        ],
+        "refund_policy": [
+            "refund", "wapas", "cancel admission", "tc",
+            "transfer certificate", "withdrawal"
+        ],
+        "comparison": [
+            "better", "compare", "vs", "comparison",
+            "best college", "worth"
+        ],
+    }
+
+    # Hinglish keyword boost: extra +0.20 for Hindi/Hinglish keywords
+    HINGLISH_BOOST = {
+        "fees_structure": [
+            "fees", "fee", "kitni", "kitna", "paisa",
+            "rupaye", "cost", "charge", "kitne paise",
+            "fees kya", "fees batao", "fees hai"
+        ],
+        "admission_process": [
+            "admission", "addmission", "adm", "apply",
+            "kaise hoga", "kaise le", "lena hai",
+            "admission chahiye", "leni hai", "kaise milega"
+        ],
+        "courses_offered": [
+            "course", "courses", "kya padhenge", "kya hai",
+            "programme", "branch", "stream", "subjects"
+        ],
+        "eligibility": [
+            "eligible", "marks chahiye", "percentage",
+            "kitne marks", "qualification", "12th mein",
+            "minimum marks", "cutoff marks"
+        ],
+        "slot_booking": [
+            "appointment", "milna", "visit", "aana",
+            "college dekhna", "campus", "baat karni hai",
+            "kab aayein", "kab milein", "slot"
+        ],
+        "scholarship": [
+            "scholarship", "free", "concession",
+            "financial aid", "free mein", "discount"
+        ],
+        "documents_needed": [
+            "documents", "papers", "kya laana", "kya chahiye",
+            "certificate", "marksheet", "aadhar"
+        ],
+        "placement_info": [
+            "placement", "job", "package", "company",
+            "naukri", "salary", "campus placement",
+            "placements kaisi hain", "kaun si company"
+        ],
+        "hostel_info": [
+            "hostel", "stay", "rehna", "accommodation",
+            "room", "pg", "paying guest"
+        ],
+        "contact_info": [
+            "contact", "phone", "number", "address",
+            "kahan hai", "location", "map", "kaise pahunche"
+        ],
+        "last_date": [
+            "last date", "deadline", "kab tak", "kitne din",
+            "form kab", "form ki date", "apply kab tak"
+        ],
+        "greeting": [
+            "namaste", "namaskar", "hi", "hello",
+            "hey", "helo", "hii", "kya haal", "good morning"
         ],
     }
 
@@ -262,6 +372,8 @@ class NLPEngine:
         """
         Boost intent confidence when high-signal keywords are present.
 
+        Also applies Hinglish keyword boost (+0.20) for Hindi/Hinglish terms.
+
         Args:
             tokens: Preprocessed tokens.
             best_intent: Currently best intent from cosine similarity.
@@ -272,6 +384,7 @@ class NLPEngine:
             Tuple of (possibly updated intent, possibly boosted score).
         """
         token_set = set(tokens)
+        token_str = " ".join(tokens)
         boosted_scores: dict[str, float] = {}
 
         for intent, keywords in self.KEYWORD_BOOST_MAP.items():
@@ -283,6 +396,19 @@ class NLPEngine:
                 if intent_indices:
                     intent_score = float(np.max(similarities[intent_indices]))
                     boosted_scores[intent] = intent_score + 0.15
+
+        # Apply Hinglish boost (+0.20) for multi-word phrase and single-word matches
+        for intent, hinglish_keywords in self.HINGLISH_BOOST.items():
+            for kw in hinglish_keywords:
+                if kw in token_str or kw in token_set:
+                    intent_indices = [
+                        i for i, lbl in enumerate(self.pattern_labels) if lbl == intent
+                    ]
+                    if intent_indices:
+                        base = float(np.max(similarities[intent_indices]))
+                        current = boosted_scores.get(intent, base)
+                        boosted_scores[intent] = max(current, base + 0.20)
+                    break
 
         if boosted_scores:
             top_boosted_intent = max(boosted_scores, key=boosted_scores.__getitem__)
