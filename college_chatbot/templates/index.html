@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITM Gwalior – College Enquiry Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <!-- ── Chat Container ──────────────────────────────────────── -->
+  <div class="chat-container" id="chatContainer">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="header-left">
+        <div class="avatar header-avatar">IT</div>
+        <div class="header-info">
+          <h2>ITM Gwalior Chatbot</h2>
+          <span class="online-indicator">
+            <span class="online-dot"></span> Online
+          </span>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="college-tag">🎓 Gwalior, MP</span>
+      </div>
+    </div>
+
+    <!-- Messages window -->
+    <div class="chat-window" id="chatWindow">
+      <!-- Messages are injected here by chat.js -->
+    </div>
+
+    <!-- Typing indicator (hidden by default) -->
+    <div class="typing-indicator" id="typingIndicator" style="display:none">
+      <div class="avatar">IT</div>
+      <div class="typing-dots">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="chat-input-area">
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Type your message…"
+        autocomplete="off"
+        maxlength="500"
+      />
+      <button id="sendBtn" onclick="sendMessage()" aria-label="Send">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <path d="M2 21l21-9L2 3v7l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+
+  </div><!-- /.chat-container -->
+
+  <script src="/static/chat.js"></script>
+</body>
+</html>

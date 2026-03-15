@@ -1,0 +1,399 @@
+{
+  "college": {
+    "name": "Institute of Technology & Management",
+    "short_name": "ITM Gwalior",
+    "established": 1997,
+    "naac_grade": "B++",
+    "affiliating_university": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), Bhopal",
+    "type": "Private (AICTE Approved)",
+    "location": "Gwalior, Madhya Pradesh",
+    "address": "ITM Campus, Turari, NH-75, Gwalior - 474001, Madhya Pradesh, India",
+    "phone": ["+91-751-2970300", "+91-9039019301"],
+    "email": "info@itmgwalior.ac.in",
+    "admissions_email": "admissions@itmgwalior.ac.in",
+    "website": "www.itmgwalior.ac.in",
+    "google_maps": "https://bit.ly/itm-gwalior",
+    "office_hours": "Monday to Saturday, 9:00 AM – 5:00 PM",
+    "accreditations": ["NAAC B++", "AICTE Approved", "UGC Recognized", "RGPV Affiliated"]
+  },
+  "courses": {
+    "ug": [
+      {
+        "name": "B.Tech Computer Science Engineering",
+        "short": "B.Tech CS",
+        "duration": "4 years",
+        "seats": 120,
+        "fees_per_year": 87000,
+        "eligibility": "60% in PCM (Physics, Chemistry, Maths) in 12th + JEE Mains score",
+        "min_percentage": 60,
+        "entrance_exam": "JEE Mains / RGPV Counselling (DTE MP)",
+        "specializations": ["AI & ML", "Data Science", "Cybersecurity", "IoT"]
+      },
+      {
+        "name": "B.Tech Electronics & Communication Engineering",
+        "short": "B.Tech EC",
+        "duration": "4 years",
+        "seats": 60,
+        "fees_per_year": 84000,
+        "eligibility": "60% in PCM in 12th + JEE Mains score",
+        "min_percentage": 60,
+        "entrance_exam": "JEE Mains / RGPV Counselling (DTE MP)",
+        "specializations": ["VLSI Design", "Embedded Systems", "Signal Processing"]
+      },
+      {
+        "name": "B.Tech Mechanical Engineering",
+        "short": "B.Tech ME",
+        "duration": "4 years",
+        "seats": 60,
+        "fees_per_year": 82000,
+        "eligibility": "60% in PCM in 12th + JEE Mains score",
+        "min_percentage": 60,
+        "entrance_exam": "JEE Mains / RGPV Counselling (DTE MP)",
+        "specializations": ["Automobile Engineering", "Thermal Engineering", "Manufacturing"]
+      },
+      {
+        "name": "B.Tech Civil Engineering",
+        "short": "B.Tech CE",
+        "duration": "4 years",
+        "seats": 60,
+        "fees_per_year": 80000,
+        "eligibility": "60% in PCM in 12th + JEE Mains score",
+        "min_percentage": 60,
+        "entrance_exam": "JEE Mains / RGPV Counselling (DTE MP)",
+        "specializations": ["Structural Engineering", "Environmental Engineering"]
+      },
+      {
+        "name": "Bachelor of Computer Applications",
+        "short": "BCA",
+        "duration": "3 years",
+        "seats": 60,
+        "fees_per_year": 48000,
+        "eligibility": "55% in 12th with Mathematics as a subject",
+        "min_percentage": 55,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Web Development", "Mobile App Development", "Database Management"]
+      },
+      {
+        "name": "Bachelor of Business Administration",
+        "short": "BBA",
+        "duration": "3 years",
+        "seats": 60,
+        "fees_per_year": 42000,
+        "eligibility": "50% in 12th (any stream)",
+        "min_percentage": 50,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Marketing", "Finance", "Human Resources", "Entrepreneurship"]
+      },
+      {
+        "name": "Bachelor of Science",
+        "short": "B.Sc",
+        "duration": "3 years",
+        "seats": 60,
+        "fees_per_year": 36000,
+        "eligibility": "55% in 12th (Science stream)",
+        "min_percentage": 55,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Physics", "Chemistry", "Mathematics", "Computer Science"]
+      },
+      {
+        "name": "Bachelor of Commerce",
+        "short": "B.Com",
+        "duration": "3 years",
+        "seats": 60,
+        "fees_per_year": 32000,
+        "eligibility": "50% in 12th (any stream)",
+        "min_percentage": 50,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Accounting", "Taxation", "Business Law"]
+      }
+    ],
+    "pg": [
+      {
+        "name": "Master of Technology",
+        "short": "M.Tech",
+        "duration": "2 years",
+        "seats": 30,
+        "fees_per_year": 92000,
+        "eligibility": "Relevant B.Tech/B.E. with 60% marks + GATE score (preferred)",
+        "min_percentage": 60,
+        "entrance_exam": "GATE / RGPV M.Tech Entrance",
+        "specializations": ["Computer Science", "Electronics", "Mechanical", "Civil"]
+      },
+      {
+        "name": "Master of Computer Applications",
+        "short": "MCA",
+        "duration": "2 years",
+        "seats": 60,
+        "fees_per_year": 58000,
+        "eligibility": "BCA/B.Sc (CS/IT)/B.Tech with 55% marks + Mathematics in qualifying exam",
+        "min_percentage": 55,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Software Engineering", "Cloud Computing", "Data Analytics"]
+      },
+      {
+        "name": "Master of Business Administration",
+        "short": "MBA",
+        "duration": "2 years",
+        "seats": 60,
+        "fees_per_year": 88000,
+        "eligibility": "Any graduation with 50% marks + CAT/MAT/XAT score",
+        "min_percentage": 50,
+        "entrance_exam": "CAT / MAT / XAT / MP-MAT",
+        "specializations": ["Marketing", "Finance", "HR", "Operations", "Business Analytics"]
+      },
+      {
+        "name": "Master of Science",
+        "short": "M.Sc",
+        "duration": "2 years",
+        "seats": 30,
+        "fees_per_year": 46000,
+        "eligibility": "Relevant B.Sc with 55% marks",
+        "min_percentage": 55,
+        "entrance_exam": "Direct Admission / Merit Based",
+        "specializations": ["Physics", "Chemistry", "Mathematics", "Computer Science"]
+      }
+    ]
+  },
+  "important_dates": {
+    "academic_year": "2025-26",
+    "form_start_date": "March 1, 2025",
+    "form_last_date": "May 31, 2025",
+    "application_fee": 500,
+    "entrance_exam_date": "June 15, 2025",
+    "admit_card_release": "June 8, 2025",
+    "result_declaration": "June 25, 2025",
+    "first_merit_list": "July 1, 2025",
+    "second_merit_list": "July 8, 2025",
+    "counselling_start": "July 1, 2025",
+    "counselling_end": "July 10, 2025",
+    "classes_begin": "August 1, 2025",
+    "exam_centers": ["Gwalior", "Bhopal", "Indore", "Jabalpur", "Ujjain"]
+  },
+  "documents_required": [
+    "10th Marksheet & Certificate",
+    "12th/Graduation Marksheet & Certificate",
+    "Aadhar Card (both sides)",
+    "Passport size photographs (6 copies)",
+    "Caste/Category Certificate (if applicable)",
+    "Migration Certificate",
+    "Character Certificate from previous institution",
+    "Income Certificate (for scholarship application)",
+    "Transfer Certificate",
+    "Medical Fitness Certificate"
+  ],
+  "hostel": {
+    "boys_hostel": {
+      "name": "ITM Boys Hostel",
+      "capacity": 500,
+      "fees_per_year": 68000,
+      "includes": "Mess charges included",
+      "room_types": ["2-sharing", "3-sharing", "4-sharing"],
+      "facilities": ["24/7 Security", "WiFi (50 Mbps)", "Hot Water", "Indoor Sports", "Common Room", "Laundry", "Medical Room"]
+    },
+    "girls_hostel": {
+      "name": "ITM Girls Hostel",
+      "capacity": 300,
+      "fees_per_year": 72000,
+      "includes": "Mess charges included",
+      "room_types": ["2-sharing", "3-sharing"],
+      "facilities": ["24/7 Security + Female Wardens", "WiFi (50 Mbps)", "Hot Water", "Indoor Sports", "Common Room", "Laundry", "Medical Room", "Salon"]
+    },
+    "contact": "hostel@itmgwalior.ac.in",
+    "warden_phone": "+91-751-2970301"
+  },
+  "scholarships": [
+    {
+      "name": "Merit Scholarship",
+      "description": "For students with >90% marks in qualifying examination",
+      "benefit": "50% tuition fee waiver",
+      "eligibility": "More than 90% in 10+2 or qualifying exam",
+      "renewable": true,
+      "renewal_criteria": "Maintain 8.0 CGPA each semester"
+    },
+    {
+      "name": "EWS Scholarship",
+      "description": "For economically weaker section students",
+      "benefit": "30% tuition fee waiver",
+      "eligibility": "Annual family income less than ₹2.5 lakhs",
+      "renewable": true,
+      "renewal_criteria": "Maintain 6.0 CGPA each semester"
+    },
+    {
+      "name": "SC/ST Scholarship",
+      "description": "Government scholarship combined with institutional discount",
+      "benefit": "Government scholarship + 25% institutional fee discount",
+      "eligibility": "SC/ST category certificate required",
+      "renewable": true,
+      "renewal_criteria": "Regular attendance and passing all subjects"
+    },
+    {
+      "name": "Sports Quota Scholarship",
+      "description": "For state or national level athletes",
+      "benefit": "20% tuition fee waiver",
+      "eligibility": "State or national level participation certificate",
+      "renewable": true,
+      "renewal_criteria": "Continue sports participation and maintain 6.5 CGPA"
+    }
+  ],
+  "admission_process": [
+    "Visit www.itmgwalior.ac.in and click on 'Apply Now'",
+    "Fill the online application form with personal and academic details",
+    "Upload required documents (marksheets, Aadhar, photograph)",
+    "Pay application fee of ₹500 online",
+    "Download admit card for entrance exam (if applicable)",
+    "Appear for JEE Mains / RGPV DTE MP counselling",
+    "Check result and merit list on college website",
+    "Attend counselling session with original documents",
+    "Pay admission fee and confirm your seat",
+    "Collect admission letter and begin classes on August 1, 2025"
+  ],
+  "facilities": [
+    "Central Library with 50,000+ books and e-resources",
+    "Modern Computer Labs (400+ workstations)",
+    "Research & Innovation Center",
+    "Sports Complex (Cricket ground, Football field, Basketball court, Badminton courts)",
+    "Cafeteria & Food Court",
+    "Medical Center",
+    "Auditorium (800 seating capacity)",
+    "Smart Classrooms",
+    "WiFi Campus",
+    "Industry Partnership Cell",
+    "Placement Cell (300+ companies visiting annually)"
+  ],
+  "placement": {
+    "placement_rate": "90%",
+    "highest_package": "₹18 LPA",
+    "average_package": "₹5.5 LPA",
+    "top_recruiters": ["TCS", "Infosys", "Wipro", "HCL", "Accenture", "Cognizant", "Tech Mahindra", "IBM", "Capgemini", "HDFC Bank"],
+    "placement_cell_email": "placement@itmgwalior.ac.in"
+  },
+  "placements": {
+    "overall_percentage": "85%",
+    "average_package_lpa": 4.2,
+    "highest_package_lpa": 18.5,
+    "year": "2023-24",
+    "top_recruiters": [
+      {"name": "TCS", "roles": ["Systems Engineer", "Developer"], "package_lpa": 3.6},
+      {"name": "Infosys", "roles": ["Associate"], "package_lpa": 3.8},
+      {"name": "Wipro", "roles": ["Project Engineer"], "package_lpa": 3.5},
+      {"name": "HCL Technologies", "roles": ["Technical Support"], "package_lpa": 3.4},
+      {"name": "Capgemini", "roles": ["Analyst"], "package_lpa": 4.0},
+      {"name": "Tech Mahindra", "roles": ["Software Engineer"], "package_lpa": 3.7},
+      {"name": "Cognizant", "roles": ["Programmer Analyst"], "package_lpa": 4.0},
+      {"name": "Accenture", "roles": ["Associate SE"], "package_lpa": 4.5},
+      {"name": "IBM", "roles": ["Associate Developer"], "package_lpa": 5.2},
+      {"name": "Deloitte", "roles": ["Business Analyst"], "package_lpa": 6.0}
+    ],
+    "branch_wise": {
+      "B.Tech CS": "92% placed",
+      "B.Tech EC": "78% placed",
+      "B.Tech ME": "72% placed",
+      "B.Tech CE": "68% placed",
+      "MCA": "88% placed",
+      "MBA": "80% placed"
+    }
+  },
+  "documents_detailed": {
+    "mandatory": [
+      "10th marksheet (original + 2 photocopies)",
+      "12th marksheet (original + 2 photocopies)",
+      "School Leaving / Transfer Certificate",
+      "Aadhar Card (original + 2 photocopies)",
+      "4 passport-size photographs (recent, white background)",
+      "Migration Certificate (if from other board)",
+      "Character Certificate from last institution"
+    ],
+    "conditional": [
+      "Caste Certificate (SC/ST/OBC ke liye)",
+      "Income Certificate (EWS/scholarship ke liye)",
+      "Sports Certificate (sports quota ke liye)",
+      "GATE scorecard (M.Tech ke liye)",
+      "CAT/MAT scorecard (MBA ke liye)",
+      "Disability Certificate (if applicable)"
+    ],
+    "notes": "All documents self-attested honaye chahiye. Original documents verification ke baad wapas kar diye jayenge."
+  },
+  "important_dates_2025_26": {
+    "form_start": "March 1, 2025",
+    "form_last_date": "May 31, 2025",
+    "application_fee": "₹500 (non-refundable)",
+    "admit_card": "June 8, 2025",
+    "entrance_exam": "June 15, 2025",
+    "result_date": "June 25, 2025",
+    "first_merit_list": "July 1, 2025",
+    "counselling_start": "July 1, 2025",
+    "counselling_end": "July 10, 2025",
+    "fee_payment_deadline": "July 15, 2025",
+    "classes_begin": "August 1, 2025",
+    "lateral_entry_last_date": "June 15, 2025"
+  },
+  "hostel_detailed": {
+    "boys": {
+      "capacity": 400,
+      "fee_per_year": 55000,
+      "facilities": ["AC rooms available", "WiFi", "24x7 security", "Mess", "RO water", "Laundry", "Study room"]
+    },
+    "girls": {
+      "capacity": 200,
+      "fee_per_year": 58000,
+      "facilities": ["AC rooms", "WiFi", "24x7 CCTV", "Warden", "Mess", "RO water", "Common room"]
+    },
+    "mess_fee_per_month": 3500,
+    "availability": "First come first served basis"
+  },
+  "scholarships_detailed": {
+    "merit_based": {
+      "criteria": "12th mein 90% ya usse zyada",
+      "benefit": "25% fee waiver"
+    },
+    "ews": {
+      "criteria": "Family income < ₹8 lakh/year",
+      "benefit": "20% fee waiver + govt scheme applicable"
+    },
+    "sc_st": {
+      "criteria": "Valid caste certificate required",
+      "benefit": "MP Govt scholarship — full tuition in many cases"
+    },
+    "sports_quota": {
+      "criteria": "State/National level participation",
+      "benefit": "15% fee waiver"
+    },
+    "minority": {
+      "criteria": "Minority community + income proof",
+      "benefit": "Pre-matric/post-matric govt scholarship"
+    }
+  },
+  "campus": {
+    "area_acres": 25,
+    "naac_grade": "B+",
+    "affiliated_to": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), Bhopal",
+    "ugc_approved": true,
+    "established": 1999,
+    "labs": ["Computer lab x6", "Electronics lab", "Mechanical workshop", "Civil survey lab", "Chemistry lab", "Physics lab", "IoT lab", "AI/ML lab"],
+    "library_books": 25000,
+    "wifi": "Campus-wide Wi-Fi",
+    "sports": ["Cricket ground", "Basketball court", "Volleyball", "Badminton", "Table tennis", "Football ground", "Gym"],
+    "transport": {
+      "routes": ["Gwalior city bus", "Morena route", "Bhind route"],
+      "fee_per_year": 12000
+    }
+  },
+  "anti_ragging": {
+    "helpline": "1800-180-5522 (toll free)",
+    "college_committee": "+91-751-2970300 ext 210",
+    "email": "antiragging@itmgwalior.ac.in",
+    "policy": "Zero tolerance. FIR + rustication for violators."
+  },
+  "refund_policy": {
+    "before_july_15": "Full fee refund minus ₹1000 processing",
+    "july_15_to_aug_1": "75% refund",
+    "after_aug_1": "No refund. TC within 30 days."
+  },
+  "lateral_entry": {
+    "eligibility": "Diploma in relevant branch with 60%",
+    "direct_admission_to": "2nd year B.Tech",
+    "seats": "10% supernumerary seats",
+    "process": "DTE MP counselling ya direct application",
+    "last_date": "June 15, 2025"
+  }
+}
