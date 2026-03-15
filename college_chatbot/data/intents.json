@@ -356,6 +356,236 @@
       ]
     },
     {
+      "tag": "placement_info",
+      "patterns": [
+        "placements kaisi hain",
+        "kaun si company aati hai",
+        "placement percentage",
+        "average package kya hai",
+        "highest package",
+        "kitni companies aati hain",
+        "job milegi",
+        "campus placement",
+        "on campus placement",
+        "placement record",
+        "TCS aata hai kya",
+        "placement details",
+        "placement information",
+        "companies visiting campus",
+        "job opportunities"
+      ],
+      "responses": [
+        "ITM Gwalior has an excellent placement record with 90% overall placement rate. Top recruiters include TCS, Infosys, Wipro, Accenture, and more!"
+      ]
+    },
+    {
+      "tag": "campus_life",
+      "patterns": [
+        "hostel hai",
+        "canteen kaisi hai",
+        "sports facility",
+        "gym hai kya",
+        "library",
+        "wifi hai kya",
+        "extracurricular",
+        "clubs hain kya",
+        "activities",
+        "campus facilities",
+        "campus life kaisi hai",
+        "college life",
+        "student life",
+        "recreational facilities",
+        "campus mein kya kya hai"
+      ],
+      "responses": [
+        "ITM Gwalior has a vibrant campus with sports facilities, library, WiFi, clubs, and more!"
+      ]
+    },
+    {
+      "tag": "faculty_info",
+      "patterns": [
+        "teachers kaise hain",
+        "faculty",
+        "professors",
+        "labs hain kya",
+        "research hota hai",
+        "phd faculty",
+        "faculty details",
+        "teaching quality",
+        "faculty members",
+        "lab facilities",
+        "faculty qualifications",
+        "experienced teachers",
+        "professors kaise hain",
+        "teaching staff",
+        "faculty information"
+      ],
+      "responses": [
+        "ITM Gwalior has experienced faculty with PhD and industry experience."
+      ]
+    },
+    {
+      "tag": "lateral_entry",
+      "patterns": [
+        "lateral entry",
+        "direct second year",
+        "diploma ke baad",
+        "LE admission",
+        "3 years B.Tech",
+        "2nd year mein seedha",
+        "polytechnic ke baad",
+        "lateral entry admission",
+        "diploma holder admission",
+        "direct entry second year",
+        "lateral entry eligibility",
+        "lateral entry process",
+        "diploma se btech",
+        "polytechnic to btech",
+        "lateral entry seats"
+      ],
+      "responses": [
+        "Lateral entry allows diploma holders to directly enter 2nd year B.Tech at ITM Gwalior."
+      ]
+    },
+    {
+      "tag": "naac_ranking",
+      "patterns": [
+        "NAAC grade",
+        "ranking",
+        "NIRF",
+        "accreditation",
+        "kitni rank hai",
+        "recognized hai kya",
+        "UGC approved",
+        "college ranking",
+        "college rating",
+        "NAAC accreditation",
+        "college grade",
+        "university ranking",
+        "best college hai kya",
+        "approval status",
+        "college reputation"
+      ],
+      "responses": [
+        "ITM Gwalior has NAAC B++ grade, AICTE approval, and is affiliated to RGPV Bhopal."
+      ]
+    },
+    {
+      "tag": "anti_ragging",
+      "patterns": [
+        "ragging hoti hai kya",
+        "safe hai campus",
+        "anti ragging",
+        "committee",
+        "complaint kahan karein",
+        "ragging complaint",
+        "campus safety",
+        "is campus safe",
+        "anti ragging committee",
+        "ragging helpline",
+        "student safety",
+        "ragging policy",
+        "zero tolerance",
+        "safety measures",
+        "anti ragging helpline"
+      ],
+      "responses": [
+        "ITM Gwalior has a strict anti-ragging policy with zero tolerance."
+      ]
+    },
+    {
+      "tag": "refund_policy",
+      "patterns": [
+        "fees wapas milegi",
+        "refund",
+        "cancel karna hai admission",
+        "TC chahiye",
+        "transfer certificate",
+        "withdrawal",
+        "fee refund policy",
+        "admission cancel",
+        "money back",
+        "refund process",
+        "cancellation policy",
+        "fee wapas",
+        "admission withdrawal",
+        "refund kitna milega",
+        "how to cancel admission"
+      ],
+      "responses": [
+        "ITM Gwalior has a clear refund policy based on the date of cancellation."
+      ]
+    },
+    {
+      "tag": "nri_quota",
+      "patterns": [
+        "NRI quota",
+        "foreign students",
+        "abroad se",
+        "management quota",
+        "NRI admission",
+        "international students",
+        "NRI seats",
+        "management seats",
+        "foreign admission",
+        "NRI category",
+        "overseas students",
+        "management quota admission",
+        "NRI fee structure",
+        "foreign national admission",
+        "international admission"
+      ],
+      "responses": [
+        "ITM Gwalior has provisions for NRI and management quota admissions."
+      ]
+    },
+    {
+      "tag": "events_fest",
+      "patterns": [
+        "techfest",
+        "cultural fest",
+        "hackathon",
+        "events hote hain",
+        "annual function",
+        "sports day",
+        "college fest",
+        "tech fest",
+        "cultural events",
+        "college events",
+        "annual fest",
+        "competitions",
+        "workshops",
+        "seminars",
+        "college function"
+      ],
+      "responses": [
+        "ITM Gwalior hosts various tech fests, cultural events, hackathons, and sports events throughout the year!"
+      ]
+    },
+    {
+      "tag": "comparison",
+      "patterns": [
+        "LNCT se better hai kya",
+        "ITM vs RGPV",
+        "other colleges se compare karo",
+        "best college hai kya Gwalior mein",
+        "college comparison",
+        "ITM vs other colleges",
+        "better hai kya",
+        "kaisa hai college",
+        "worth it hai kya",
+        "top college hai kya",
+        "ranking mein kahan hai",
+        "compare with other",
+        "college review",
+        "ITM Gwalior review",
+        "dusre colleges se better"
+      ],
+      "responses": [
+        "ITM Gwalior stands out with its NAAC B++ grade, strong placements, and excellent infrastructure."
+      ]
+    },
+    {
       "tag": "fallback",
       "patterns": [
         "what is the meaning of life",
